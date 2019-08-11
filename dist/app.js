@@ -18,6 +18,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// 全局引入taro-ui样式
+// 全局引入一次即可
+
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
 // if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
@@ -39,12 +42,26 @@ var _App = function (_BaseComponent) {
     var _this = _possibleConstructorReturn(this, (_App.__proto__ || Object.getPrototypeOf(_App)).apply(this, arguments));
 
     _this.config = {
-      pages: ['pages/index/index'],
+      pages: ['pages/home/home', 'pages/person/person'],
       window: {
         backgroundTextStyle: 'light',
         navigationBarBackgroundColor: '#fff',
         navigationBarTitleText: 'WeChat',
         navigationBarTextStyle: 'black'
+      },
+      "tabBar": {
+        "list": [{
+          "pagePath": "pages/home/home",
+          "text": "首页",
+          'iconPath': './assets/images/home.png',
+          'selectedIconPath': './assets/images/home1.png'
+        }, {
+          "pagePath": "pages/person/person",
+          "text": "会员中心",
+          'iconPath': './assets/images/Person.png',
+          'selectedIconPath': './assets/images/Person1.png'
+        }],
+        'selectedColor': '#1296db'
       }
     };
     return _this;

@@ -1,5 +1,8 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import Index from './pages/index'
+import Home from './pages/home/home'
+
+// 全局引入taro-ui样式
+import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 
 import './app.scss'
 
@@ -20,29 +23,47 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index/index'
+      'pages/home/home',
+      'pages/person/person'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
-    }
+    },
+    "tabBar": {
+      "list": [
+        {
+          "pagePath": "pages/home/home",
+          "text": "首页",
+          'iconPath': './assets/images/home.png',
+          'selectedIconPath': './assets/images/home1.png',
+        },
+        {
+          "pagePath": "pages/person/person",
+          "text": "会员中心",
+          'iconPath': './assets/images/Person.png',
+          'selectedIconPath': './assets/images/Person1.png'
+        }
+      ],
+      'selectedColor': '#1296db'
+    },
   }
 
-  componentDidMount () {}
+  componentDidMount() { }
 
-  componentDidShow () {}
+  componentDidShow() { }
 
-  componentDidHide () {}
+  componentDidHide() { }
 
-  componentDidCatchError () {}
+  componentDidCatchError() { }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
-      <Index />
+      <Home />
     )
   }
 }
