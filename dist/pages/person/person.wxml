@@ -1,4 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="index"><text>Hello world!</text>
+    <view class="person">
+        <view>个人中心</view>
     </view>
 </block>
