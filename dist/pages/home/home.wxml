@@ -1,4 +1,27 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="index"><text>Hello world!</text>
+    <view>
+        <view class="lunbotu">
+            <swiper class="test-h" indicator-color="#333" indicator-active-color="#1296db" circular="{{true}}" indicator-dots="{{true}}" autoplay="{{true}}">
+                <swiper-item>
+                    <view class="demo-text">
+                        <image src="https://aecpm.alicdn.com/simba/img/TB1CWf9KpXXXXbuXpXXSutbFXXX.jpg_q50.jpg" class="imgSrc"></image>
+                    </view>
+                </swiper-item>
+                <swiper-item>
+                    <view class="demo-text">
+                        <image src="https://aecpm.alicdn.com/simba/img/TB14ab1KpXXXXclXFXXSutbFXXX.jpg_q50.jpg" class="imgSrc"></image>
+                    </view>
+                </swiper-item>
+                <swiper-item>
+                    <view class="demo-text">
+                        <image src="https://gw.alicdn.com/imgextra/i2/78/O1CN019lSGp71CRlRdIPVMB_!!78-0-lubanu.jpg" class="imgSrc"></image>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view>
+            <at-noticebar compid="{{$compid__16}}"><text class="tip">特别通知：小程序正在开发中</text>
+            </at-noticebar>
+        </view>
     </view>
 </block>
