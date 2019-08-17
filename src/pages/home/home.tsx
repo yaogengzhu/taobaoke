@@ -3,8 +3,7 @@ import { View, Text, Swiper, SwiperItem, Image } from '@tarojs/components'
 import { AtNoticebar } from 'taro-ui'
 
 const fetch = require('../../api/index')
-// import crypto from 'crypto'
-import crypto from 'crypto-js'
+
 
 import './home.scss'
 
@@ -22,11 +21,10 @@ export default class Index extends Component {
   }
 
   componentWillMount() {
-    console.log(crypto)
     fetch.jsonRPC({
-      url:'/goods/get-goods-list',
+      url:'/2/get_man_clothing',
       data: {
-        // pageId: 1
+        'page_no': 2
       }
     }).then(res => {
       console.log(res)
