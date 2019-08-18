@@ -1,4 +1,4 @@
-import Taro, { Component, Config } from '@tarojs/taro'
+import Taro, { Component, Config, navigateTo } from '@tarojs/taro'
 import { View, Text, Swiper, SwiperItem, Image } from '@tarojs/components'
 import { AtNoticebar } from 'taro-ui'
 
@@ -31,6 +31,7 @@ export default class Index extends Component {
     })
    }
 
+  
   componentDidMount() { }
 
   componentWillUnmount() { }
@@ -38,6 +39,9 @@ export default class Index extends Component {
   componentDidShow() { }
 
   componentDidHide() { }
+
+  // method
+
 
   render() {
     return (
@@ -77,6 +81,7 @@ export default class Index extends Component {
           </AtNoticebar>
         </View>
       </View>
+ 
     )
   }
 }

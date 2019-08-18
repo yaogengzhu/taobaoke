@@ -1,5 +1,53 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="person">
-        <view>个人中心</view>
+        <view class="bg"></view>
+        <view class="menu">
+            <view class="top">
+                <view class="left">我的订单</view>
+                <view class="right">查看全部订单
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+            <view class="center">
+                <view class="center-list">
+                    <image src="{{daiFuKuan}}" class="img"></image>待付款</view>
+                <view class="center-list">
+                    <image src="{{daiFaHuo}}" class="img"></image>待发货</view>
+                <view class="center-list">
+                    <image src="{{daiShouHuo}}" class="img"></image>待收货</view>
+                <view class="center-list">
+                    <image src="{{tuiHuo}}" class="img"></image>退换货</view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="list-li">
+                <view class="left">
+                    <image src="{{order}}" class="img"></image>历史订单</view>
+                <view class="right">
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+            <view class="list-li">
+                <view class="left">
+                    <image src="{{car}}" class="img"></image>购物车</view>
+                <view class="right">
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+            <view class="list-li">
+                <view class="left">
+                    <image src="{{local}}" class="img"></image>地址管理</view>
+                <view class="right">
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+            <view class="list-li last">
+                <view class="left">
+                    <image src="{{phone}}" class="img"></image>服务热线</view>
+                <view class="right ">
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+        </view>
     </view>
 </block>

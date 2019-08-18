@@ -22,7 +22,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import './pserson.scss'
+var daiFuKuan = "/assets/images/daifukuan.png";
+var daiFaHuo = "/assets/images/daifahuo.png";
+var daiShouHuo = "/assets/images/daishouhuofuben.png";
+var tuiHuo = "/assets/images/icon5.png";
+var order = "/assets/images/order.png";
+var car = "/assets/images/car.png";
+var local = "/assets/images/local.png";
+var phone = "/assets/images/phone.png";
+
 var Index = (_temp2 = _class = function (_BaseComponent) {
   _inherits(Index, _BaseComponent);
 
@@ -37,7 +45,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["daiFuKuan", "daiFaHuo", "daiShouHuo", "tuiHuo", "order", "car", "local", "phone"], _this.config = {
       navigationBarTitleText: '首页'
     }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -78,7 +86,16 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      Object.assign(this.__state, {});
+      Object.assign(this.__state, {
+        daiFuKuan: daiFuKuan,
+        daiFaHuo: daiFaHuo,
+        daiShouHuo: daiShouHuo,
+        tuiHuo: tuiHuo,
+        order: order,
+        car: car,
+        local: local,
+        phone: phone
+      });
       return this.__state;
     }
   }]);
