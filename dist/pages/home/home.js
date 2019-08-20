@@ -23,6 +23,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var fetch = require("../../api/index.js");
+// 引入图片
+var bag = "/assets/images/bag.png";
+var food = "/assets/images/food.png";
+var man = "/assets/images/man.png";
+var women = "/assets/images/women.png";
+var meiz = "/assets/images/meiz.png";
+var shuama = "/assets/images/shuma.png";
+var sport = "/assets/images/sport.png";
+var neiyi = "/assets/images/neiyi.png";
 
 var Index = (_temp2 = _class = function (_BaseComponent) {
   _inherits(Index, _BaseComponent);
@@ -38,7 +47,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__5"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__41", "man", "neiyi", "sport", "meiz", "shuama", "women", "food", "bag", "goodsList"], _this.config = {
       navigationBarTitleText: '首页'
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -54,18 +63,29 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
        * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
        * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
        */
+
+      this.state = {
+        goodsList: {}
+      };
       this.$$refs = [];
     }
   }, {
     key: "componentWillMount",
     value: function componentWillMount() {
+      var _this2 = this;
+
       fetch.jsonRPC({
-        url: '/2/get_man_clothing',
+        url: '/2/get_hot',
         data: {
-          'page_no': 2
+          'platform': 2,
+          'page_size': 20,
+          'page_no': 1
         }
       }).then(function (res) {
-        console.log(res);
+        // console.log(res)
+        _this2.setState({
+          goodsList: res.data.uatm_tbk_item
+        });
       });
     }
   }, {
@@ -90,14 +110,22 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__5 = (0, _index.genCompid)(__prefix + "$compid__5");
+      var $compid__41 = (0, _index.genCompid)(__prefix + "$compid__41");
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__5);
+      }, $compid__41);
       Object.assign(this.__state, {
-        $compid__5: $compid__5
+        $compid__41: $compid__41,
+        man: man,
+        neiyi: neiyi,
+        sport: sport,
+        meiz: meiz,
+        shuama: shuama,
+        women: women,
+        food: food,
+        bag: bag
       });
       return this.__state;
     }
