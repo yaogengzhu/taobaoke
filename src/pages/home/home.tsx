@@ -4,11 +4,22 @@ import { AtNoticebar } from 'taro-ui'
 
 const fetch = require('../../api/index')
 
-
+// 引入图片
+import bag from '../../assets/images/bag.png'
+import food from '../../assets/images/food.png'
+import man from '../../assets/images/man.png'
+import women from '../../assets/images/women.png'
+import meiz from '../../assets/images/meiz.png'
+import shuama from '../../assets/images/shuma.png'
+import sport from '../../assets/images/sport.png'
+import neiyi from '../../assets/images/neiyi.png'
 import './home.scss'
 
-export default class Index extends Component {
+interface IState {
+  goodsList: any
+}
 
+export default class Index extends Component<IState> {
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -20,18 +31,33 @@ export default class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
+  constructor() {
+    super(...arguments)
+    this.state = {
+      goodsList: {},//  存放获取回来的数据
+    }
+  }
+
+
+
+
   componentWillMount() {
     fetch.jsonRPC({
-      url:'/2/get_man_clothing',
+      url: '/2/get_hot',
       data: {
-        'page_no': 2
+        'platform': 2, // 无线
+        'page_size': 20, // 每一页条数
+        'page_no': 1,
       }
     }).then(res => {
-      console.log(res)
+      // console.log(res)
+      this.setState({
+        goodsList: res.data.uatm_tbk_item
+      })
     })
-   }
+  }
 
-  
+
   componentDidMount() { }
 
   componentWillUnmount() { }
@@ -73,50 +99,76 @@ export default class Index extends Component {
         </View>
         <View>
           <AtNoticebar
-          marquee={true}
-          single={true}
-          speed={100}
+            marquee={true}
+            single={true}
+            speed={100}
           >
             <Text className='tip'>特别通知：小程序正在开发中</Text>
           </AtNoticebar>
         </View>
         {/* 八功格 */}
+
         <View className='block1'>
           <View className='list'>
-            <Image src='' className='srcImg'></Image>
+            <Image src={man} className='srcImg'></Image>
             男装
           </View>
           <View className='list'>
-            <Image src='' className='srcImg'></Image>
+            <Image src={neiyi} className='srcImg'></Image>
             内衣
           </View>
           <View className='list'>
-            <Image src='' className='srcImg'></Image>
+            <Image src={sport} className='srcImg'></Image>
             运动用品
           </View>
           <View className='list'>
-            <Image src='' className='srcImg'></Image>
+            <Image src={meiz} className='srcImg'></Image>
             美妆
           </View>
           <View className='list'>
-            <Image src='' className='srcImg'></Image>
+            <Image src={shuama} className='srcImg'></Image>
             数码家电
           </View>
           <View className='list'>
-            <Image src='' className='srcImg'></Image>
+            <Image src={women} className='srcImg'></Image>
             女装
           </View>
           <View className='list'>
-            <Image src='' className='srcImg'></Image>
+            <Image src={food} className='srcImg'></Image>
             食品
           </View>
           <View className='list'>
-            <Image src='' className='srcImg'></Image>
+            <Image src={bag} className='srcImg'></Image>
             鞋包配饰
           </View>
         </View>
+        {/* 热搜榜推荐 */}
+        <View className='hot'>热<Text className='line'>/</Text>搜<Text className='line'>/</Text>榜<Text className='line'>/</Text>推<Text className='line'>/</Text>荐</View>
+        {/* top200 渲染 */}
+        { this.state.goodsList.map((item, index) => {
+          return (
+            <View className='goodsBox' key={item.num_iid}>
+              <View className='left'>
+                <Image src={item.pict_url} className='imgSrc'></Image>
+              </View>
+              <View className='right'>
+                <View className='title'>{ item.title}</View>
+                <View className='price'>
+                  <View className='oldPrice'>¥{item.reserve_price}</View>
+                  <View className='newPrice'>¥{ item.zk_final_price}</View>
+                </View>
+                <View className='bottom'>
+                  <View>{item.nick}</View>
+                  <View>{item.volume}人付款</View>
+                  <View>{ item.provcity}</View>
+                </View>
+              </View>
+            </View>
+          )
+        })}
       </View>
- 
+
+
     )
   }
 }
