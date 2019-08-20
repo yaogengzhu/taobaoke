@@ -80,6 +80,41 @@ export default class Index extends Component {
             <Text className='tip'>特别通知：小程序正在开发中</Text>
           </AtNoticebar>
         </View>
+        {/* 八功格 */}
+        <View className='block1'>
+          <View className='list'>
+            <Image src='' className='srcImg'></Image>
+            男装
+          </View>
+          <View className='list'>
+            <Image src='' className='srcImg'></Image>
+            内衣
+          </View>
+          <View className='list'>
+            <Image src='' className='srcImg'></Image>
+            运动用品
+          </View>
+          <View className='list'>
+            <Image src='' className='srcImg'></Image>
+            美妆
+          </View>
+          <View className='list'>
+            <Image src='' className='srcImg'></Image>
+            数码家电
+          </View>
+          <View className='list'>
+            <Image src='' className='srcImg'></Image>
+            女装
+          </View>
+          <View className='list'>
+            <Image src='' className='srcImg'></Image>
+            食品
+          </View>
+          <View className='list'>
+            <Image src='' className='srcImg'></Image>
+            鞋包配饰
+          </View>
+        </View>
       </View>
  
     )
