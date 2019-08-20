@@ -20,8 +20,26 @@
             </swiper>
         </view>
         <view>
-            <at-noticebar compid="{{$compid__0}}"><text class="tip">特别通知：小程序正在开发中</text>
+            <at-noticebar compid="{{$compid__5}}"><text class="tip">特别通知：小程序正在开发中</text>
             </at-noticebar>
+        </view>
+        <view class="block1">
+            <view class="list">
+                <image src="" class="srcImg"></image>男装</view>
+            <view class="list">
+                <image src="" class="srcImg"></image>内衣</view>
+            <view class="list">
+                <image src="" class="srcImg"></image>运动用品</view>
+            <view class="list">
+                <image src="" class="srcImg"></image>美妆</view>
+            <view class="list">
+                <image src="" class="srcImg"></image>数码家电</view>
+            <view class="list">
+                <image src="" class="srcImg"></image>女装</view>
+            <view class="list">
+                <image src="" class="srcImg"></image>食品</view>
+            <view class="list">
+                <image src="" class="srcImg"></image>鞋包配饰</view>
         </view>
     </view>
 </block>

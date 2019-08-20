@@ -38,7 +38,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__0"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__5"], _this.config = {
       navigationBarTitleText: '首页'
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -90,14 +90,14 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__0 = (0, _index.genCompid)(__prefix + "$compid__0");
+      var $compid__5 = (0, _index.genCompid)(__prefix + "$compid__5");
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__0);
+      }, $compid__5);
       Object.assign(this.__state, {
-        $compid__0: $compid__0
+        $compid__5: $compid__5
       });
       return this.__state;
     }
