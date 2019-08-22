@@ -20,7 +20,7 @@
             </swiper>
         </view>
         <view>
-            <at-noticebar compid="{{$compid__41}}"><text class="tip">特别通知：小程序正在开发中</text>
+            <at-noticebar compid="{{$compid__8}}"><text class="tip">特别通知：小程序正在开发中</text>
             </at-noticebar>
         </view>
         <view class="block1">

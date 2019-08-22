@@ -47,13 +47,17 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__41", "man", "neiyi", "sport", "meiz", "shuama", "women", "food", "bag", "goodsList"], _this.config = {
-      navigationBarTitleText: '首页'
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__8", "man", "neiyi", "sport", "meiz", "shuama", "women", "food", "bag", "goodsList", "page"], _this.config = {
+      navigationBarTitleText: '首页',
+      enablePullDownRefresh: true
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
     key: "_constructor",
+
+
+    // 定义一些不需要渲染的数据
     value: function _constructor() {
       _get(Index.prototype.__proto__ || Object.getPrototypeOf(Index.prototype), "_constructor", this).apply(this, arguments);
       /**
@@ -65,28 +69,16 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
        */
 
       this.state = {
-        goodsList: {}
+        goodsList: {},
+        page: 1
       };
       this.$$refs = [];
     }
   }, {
     key: "componentWillMount",
     value: function componentWillMount() {
-      var _this2 = this;
-
-      fetch.jsonRPC({
-        url: '/2/get_hot',
-        data: {
-          'platform': 2,
-          'page_size': 20,
-          'page_no': 1
-        }
-      }).then(function (res) {
-        // console.log(res)
-        _this2.setState({
-          goodsList: res.data.uatm_tbk_item
-        });
-      });
+      // 调用函数
+      this.getHotGoods();
     }
   }, {
     key: "componentDidMount",
@@ -100,8 +92,46 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "componentDidHide",
     value: function componentDidHide() {}
+    // 下拉触底事件
+
+  }, {
+    key: "onReachBottom",
+    value: function onReachBottom() {
+      var _this2 = this;
+
+      this.setState({
+        page: this.state.page + 1
+      }, function () {
+        _this2.getHotGoods();
+      });
+    }
     // method
 
+  }, {
+    key: "getHotGoods",
+    value: function getHotGoods() {
+      var _this3 = this;
+
+      fetch.jsonRPC({
+        url: '/2/get_hot',
+        data: {
+          'platform': 2,
+          'page_size': 20,
+          'page_no': this.state.page
+        }
+      }).then(function (res) {
+        // console.log(res)
+        if (_this3.state.page === 1) {
+          _this3.setState({
+            goodsList: res.data.uatm_tbk_item
+          });
+        } else {
+          _this3.setState({
+            goodsList: res.data.uatm_tbk_item.concat(_this3.state.goodsList)
+          });
+        }
+      });
+    }
   }, {
     key: "_createData",
     value: function _createData() {
@@ -110,14 +140,14 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__41 = (0, _index.genCompid)(__prefix + "$compid__41");
+      var $compid__8 = (0, _index.genCompid)(__prefix + "$compid__8");
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__41);
+      }, $compid__8);
       Object.assign(this.__state, {
-        $compid__41: $compid__41,
+        $compid__8: $compid__8,
         man: man,
         neiyi: neiyi,
         sport: sport,
