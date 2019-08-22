@@ -1,6 +1,7 @@
 import Taro from '@tarojs/taro'
 
-const baseURL = 'http://api.yaogeng.top'
+// const baseURL = 'http://api.yaogeng.top'
+const baseURL = 'http://127.0.0.1:3000'
 
 class Fetch {
     jsonRPC(obj){

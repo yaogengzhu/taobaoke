@@ -16,7 +16,8 @@ import neiyi from '../../assets/images/neiyi.png'
 import './home.scss'
 
 interface IState {
-  goodsList: any
+  goodsList: any,
+  page: number
 }
 
 export default class Index extends Component<IState> {
@@ -28,13 +29,16 @@ export default class Index extends Component<IState> {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '首页',
+    enablePullDownRefresh: true, // 开启下拉刷新
   }
 
+  // 定义一些不需要渲染的数据
   constructor() {
     super(...arguments)
     this.state = {
       goodsList: {},//  存放获取回来的数据
+      page: 1, // 页数默认是1
     }
   }
 
@@ -42,19 +46,8 @@ export default class Index extends Component<IState> {
 
 
   componentWillMount() {
-    fetch.jsonRPC({
-      url: '/2/get_hot',
-      data: {
-        'platform': 2, // 无线
-        'page_size': 20, // 每一页条数
-        'page_no': 1,
-      }
-    }).then(res => {
-      // console.log(res)
-      this.setState({
-        goodsList: res.data.uatm_tbk_item
-      })
-    })
+    // 调用函数
+    this.getHotGoods()
   }
 
 
@@ -66,7 +59,38 @@ export default class Index extends Component<IState> {
 
   componentDidHide() { }
 
+  // 下拉触底事件
+  onReachBottom() {
+    this.setState({
+      page: this.state.page + 1
+    }, () => {
+      this.getHotGoods()
+    })
+  }
+
   // method
+  getHotGoods() {
+    fetch.jsonRPC({
+      url: '/2/get_hot',
+      data: {
+        'platform': 2, // 无线
+        'page_size': 20, // 每一页条数
+        'page_no': this.state.page,
+      }
+    }).then(res => {
+      // console.log(res)
+      if (this.state.page === 1) {
+        this.setState({
+          goodsList: res.data.uatm_tbk_item
+        })
+      } else {
+        this.setState({
+          goodsList: res.data.uatm_tbk_item.concat(this.state.goodsList)
+        })
+      }
+    })
+  }
+
 
 
   render() {
@@ -145,22 +169,22 @@ export default class Index extends Component<IState> {
         {/* 热搜榜推荐 */}
         <View className='hot'>热<Text className='line'>/</Text>搜<Text className='line'>/</Text>榜<Text className='line'>/</Text>推<Text className='line'>/</Text>荐</View>
         {/* top200 渲染 */}
-        { this.state.goodsList.map((item, index) => {
+        {this.state.goodsList.map((item, index) => {
           return (
             <View className='goodsBox' key={item.num_iid}>
               <View className='left'>
                 <Image src={item.pict_url} className='imgSrc'></Image>
               </View>
               <View className='right'>
-                <View className='title'>{ item.title}</View>
+                <View className='title'>{item.title}</View>
                 <View className='price'>
                   <View className='oldPrice'>¥{item.reserve_price}</View>
-                  <View className='newPrice'>¥{ item.zk_final_price}</View>
+                  <View className='newPrice'>¥{item.zk_final_price}</View>
                 </View>
                 <View className='bottom'>
                   <View>{item.nick}</View>
                   <View>{item.volume}人付款</View>
-                  <View>{ item.provcity}</View>
+                  <View>{item.provcity}</View>
                 </View>
               </View>
             </View>
