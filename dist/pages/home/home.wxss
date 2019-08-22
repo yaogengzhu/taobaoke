@@ -118,3 +118,6 @@
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
               justify-content: space-between; }
+
+.hover-bg {
+  background-color: #f2f2f2; }
