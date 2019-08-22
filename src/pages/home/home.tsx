@@ -15,12 +15,15 @@ import sport from '../../assets/images/sport.png'
 import neiyi from '../../assets/images/neiyi.png'
 import './home.scss'
 
+interface IProps {
+
+}
 interface IState {
-  goodsList: any,
+  goodsList: Array<any>,
   page: number
 }
 
-export default class Index extends Component<IState> {
+export default class Home extends Component<IProps, IState> {
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -30,14 +33,14 @@ export default class Index extends Component<IState> {
    */
   config: Config = {
     navigationBarTitleText: '首页',
-    enablePullDownRefresh: true, // 开启下拉刷新
+    enablePullDownRefresh: false, // 开启下拉刷新
   }
 
   // 定义一些不需要渲染的数据
   constructor() {
     super(...arguments)
     this.state = {
-      goodsList: {},//  存放获取回来的数据
+      goodsList: [],//  存放获取回来的数据
       page: 1, // 页数默认是1
     }
   }
@@ -85,12 +88,52 @@ export default class Index extends Component<IState> {
         })
       } else {
         this.setState({
-          goodsList: res.data.uatm_tbk_item.concat(this.state.goodsList)
+          goodsList: this.state.goodsList.concat(res.data.uatm_tbk_item)
         })
       }
     })
   }
 
+  // render函数 
+  renderNav() {
+    return (
+      <View className='block1'>
+        <View className='list' hover-class='hover-bg'>
+          <Image src={man} className='srcImg'></Image>
+          男装
+      </View>
+        <View className='list' hover-class='hover-bg'>
+          <Image src={neiyi} className='srcImg'></Image>
+          内衣
+      </View>
+        <View className='list' hover-class='hover-bg'>
+          <Image src={sport} className='srcImg' ></Image>
+          运动用品
+      </View>
+        <View className='list' hover-class='hover-bg'>
+          <Image src={meiz} className='srcImg'></Image>
+          美妆
+      </View>
+        <View className='list' hover-class='hover-bg'>
+          <Image src={shuama} className='srcImg'></Image>
+          数码家电
+      </View>
+        <View className='list' hover-class='hover-bg'>
+          <Image src={women} className='srcImg'></Image>
+          女装
+      </View>
+        <View className='list' hover-class='hover-bg'>
+          <Image src={food} className='srcImg'></Image>
+          食品
+      </View>
+        <View className='list' hover-class='hover-bg'>
+          <Image src={bag} className='srcImg'></Image>
+          鞋包配饰
+      </View>
+      </View>
+
+    )
+  }
 
 
   render() {
@@ -131,45 +174,12 @@ export default class Index extends Component<IState> {
           </AtNoticebar>
         </View>
         {/* 八功格 */}
+        {this.renderNav()}
 
-        <View className='block1'>
-          <View className='list'>
-            <Image src={man} className='srcImg'></Image>
-            男装
-          </View>
-          <View className='list'>
-            <Image src={neiyi} className='srcImg'></Image>
-            内衣
-          </View>
-          <View className='list'>
-            <Image src={sport} className='srcImg'></Image>
-            运动用品
-          </View>
-          <View className='list'>
-            <Image src={meiz} className='srcImg'></Image>
-            美妆
-          </View>
-          <View className='list'>
-            <Image src={shuama} className='srcImg'></Image>
-            数码家电
-          </View>
-          <View className='list'>
-            <Image src={women} className='srcImg'></Image>
-            女装
-          </View>
-          <View className='list'>
-            <Image src={food} className='srcImg'></Image>
-            食品
-          </View>
-          <View className='list'>
-            <Image src={bag} className='srcImg'></Image>
-            鞋包配饰
-          </View>
-        </View>
         {/* 热搜榜推荐 */}
         <View className='hot'>热<Text className='line'>/</Text>搜<Text className='line'>/</Text>榜<Text className='line'>/</Text>推<Text className='line'>/</Text>荐</View>
         {/* top200 渲染 */}
-        {this.state.goodsList.map((item, index) => {
+        {this.state.goodsList.map((item) => {
           return (
             <View className='goodsBox' key={item.num_iid}>
               <View className='left'>

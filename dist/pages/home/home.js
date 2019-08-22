@@ -33,33 +33,33 @@ var shuama = "/assets/images/shuma.png";
 var sport = "/assets/images/sport.png";
 var neiyi = "/assets/images/neiyi.png";
 
-var Index = (_temp2 = _class = function (_BaseComponent) {
-  _inherits(Index, _BaseComponent);
+var Home = (_temp2 = _class = function (_BaseComponent) {
+  _inherits(Home, _BaseComponent);
 
-  function Index() {
+  function Home() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, Index);
+    _classCallCheck(this, Home);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__8", "man", "neiyi", "sport", "meiz", "shuama", "women", "food", "bag", "goodsList", "page"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__43", "anonymousState__temp", "goodsList", "page"], _this.config = {
       navigationBarTitleText: '首页',
-      enablePullDownRefresh: true
+      enablePullDownRefresh: false
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(Index, [{
+  _createClass(Home, [{
     key: "_constructor",
 
 
     // 定义一些不需要渲染的数据
     value: function _constructor() {
-      _get(Index.prototype.__proto__ || Object.getPrototypeOf(Index.prototype), "_constructor", this).apply(this, arguments);
+      _get(Home.prototype.__proto__ || Object.getPrototypeOf(Home.prototype), "_constructor", this).apply(this, arguments);
       /**
        * 指定config的类型声明为: Taro.Config
        *
@@ -69,7 +69,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
        */
 
       this.state = {
-        goodsList: {},
+        goodsList: [],
         page: 1
       };
       this.$$refs = [];
@@ -127,10 +127,28 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
           });
         } else {
           _this3.setState({
-            goodsList: res.data.uatm_tbk_item.concat(_this3.state.goodsList)
+            goodsList: _this3.state.goodsList.concat(res.data.uatm_tbk_item)
           });
         }
       });
+    }
+    // render函数 
+
+  }, {
+    key: "_createNavData",
+    value: function _createNavData(_$uid) {
+      return function () {
+        return {
+          man: man,
+          neiyi: neiyi,
+          sport: sport,
+          meiz: meiz,
+          shuama: shuama,
+          women: women,
+          food: food,
+          bag: bag
+        };
+      };
     }
   }, {
     key: "_createData",
@@ -140,29 +158,25 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__8 = (0, _index.genCompid)(__prefix + "$compid__8");
+      var $compid__43 = (0, _index.genCompid)(__prefix + "$compid__43");
+
+      var anonymousState__temp = this._createNavData(__prefix + "ldmWgWGXTn")();
+
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__8);
+      }, $compid__43);
       Object.assign(this.__state, {
-        $compid__8: $compid__8,
-        man: man,
-        neiyi: neiyi,
-        sport: sport,
-        meiz: meiz,
-        shuama: shuama,
-        women: women,
-        food: food,
-        bag: bag
+        $compid__43: $compid__43,
+        anonymousState__temp: anonymousState__temp
       });
       return this.__state;
     }
   }]);
 
-  return Index;
+  return Home;
 }(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/home/home", _temp2);
-exports.default = Index;
+exports.default = Home;
 
-Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Index, true));
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Home, true));
