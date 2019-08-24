@@ -42,7 +42,7 @@
             </swiper>
         </view>
         <view>
-            <at-noticebar compid="{{$compid__50}}"><text class="tip">特别通知：小程序正在开发中</text>
+            <at-noticebar compid="{{$compid__62}}"><text class="tip">特别通知：小程序正在开发中</text>
             </at-noticebar>
         </view>
         <template is="renderNav" data="{{...anonymousState__temp}}"></template>

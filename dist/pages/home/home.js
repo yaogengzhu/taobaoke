@@ -47,7 +47,7 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__50", "anonymousState__temp", "goodsList", "page"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__62", "anonymousState__temp", "goodsList", "page"], _this.config = {
       navigationBarTitleText: '首页',
       enablePullDownRefresh: false
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -176,17 +176,17 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__50 = (0, _index.genCompid)(__prefix + "$compid__50");
+      var $compid__62 = (0, _index.genCompid)(__prefix + "$compid__62");
 
-      var anonymousState__temp = this._createNavData(__prefix + "mFNsMGEAgb")();
+      var anonymousState__temp = this._createNavData(__prefix + "BeOjufkUQy")();
 
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__50);
+      }, $compid__62);
       Object.assign(this.__state, {
-        $compid__50: $compid__50,
+        $compid__62: $compid__62,
         anonymousState__temp: anonymousState__temp
       });
       return this.__state;
