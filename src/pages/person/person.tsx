@@ -1,9 +1,26 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
-// import './pserson.scss'
+import { View, Text, Image } from '@tarojs/components'
+import daiFuKuan from '../../../src/assets/images/daifukuan.png'
+import daiFaHuo from '../../../src/assets/images/daifahuo.png'
+import daiShouHuo from '../../../src/assets/images/daishouhuofuben.png'
+import tuiHuo from '../../../src/assets/images/icon5.png'
+import order from '../../../src/assets/images/order.png'
+import car from '../../../src/assets/images/car.png'
+import local from '../../../src/assets/images/local.png'
+import phone from '../../../src/assets/images/phone.png'
 
-export default class Index extends Component {
 
+import './person.scss'
+import "taro-ui/dist/style/components/icon.scss"
+import { userInfo } from 'os';
+
+// 
+interface IState  {
+  userInfo: Object,
+  user: Object
+}
+
+export default class Index extends Component<IState> {
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -12,23 +29,153 @@ export default class Index extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '个人中心'
   }
 
-  componentWillMount () { }
+  // 构造函数 
+  constructor() {
+    super(...arguments)
+    // 设置状态值 
+    this.state = {
+      userInfo: {} , // 用户信息
+      user: {},
+    }
+  }
 
-  componentDidMount () { }
+  componentWillMount() { 
+     // 调用获取用户信息的界面
+     this.getUser()
+  }
+  componentDidMount() { 
+    this.getMsg()
+    this.getUser()
+  }
 
-  componentWillUnmount () { }
+  componentWillUnmount() { 
+  }
 
-  componentDidShow () { }
+  componentDidShow() {
+   }
 
-  componentDidHide () { }
+  componentDidHide() { 
+  }
 
-  render () {
+  // method
+  getUser() {
+    Taro.getUserInfo().then(res => {
+      // console.log(res)
+      this.setState({
+        userInfo: res.userInfo
+      })
+    })
+  }
+
+  getMsg() {
+    this.setState({
+      user: {
+        nickname: 'Victor',
+        avatar:'https://wx.qlogo.cn/mmopen/vi_32/boS3icoNzmn9k5nCdeTjloVDP6EQ871E0Rt11egbR8aNk9Eer9zvxcw1Uq9H631qhBdge8asUGRuZUOnzngS1Ug/132'
+      }
+    })
+  }
+  render() {
+
     return (
-      <View className='index'>
-        <Text>Hello world!</Text>
+      <View className='person'>
+        {/* 顶部 */}
+        <View className='bg'>
+          <View className='bg-box'>
+            <View className='block1'>
+              <View className='left'>
+                <Image src={this.state.user.avatar} className='avatarImg'></Image>
+              </View>
+              <View className='right'>
+                <View className='nickname'>{this.state.user.nickname}</View>
+                <View className='time'>上一次登录时间</View>
+              </View>
+            </View>
+            <View className='block2'>
+              <View className='li'>
+                <View className='jf'>2000</View>
+                <View className='record'>我的积分</View>
+              </View>
+              <View className='li'>
+                <View className='jf'>200</View>
+                <View className='record'>我的收藏</View>
+              </View>
+              <View className='li'>
+                <View className='jf'>39</View>
+                <View className='record'>关注店铺</View>
+              </View>
+              <View className='li'>
+                <View className='jf'>410</View>
+                <View className='record'>我的浏览</View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View className='menu'>
+          <View className='top'>
+            <View className='left'>我的订单</View>
+            <View className='right'>
+              查看全部订单
+               <View className='at-icon at-icon-chevron-right icon'></View>
+            </View>
+          </View>
+          <View className='center'>
+            <View className='center-list'>
+              <Image src={daiFuKuan} className='img'></Image>
+              待付款
+              </View>
+            <View className='center-list'>
+              <Image src={daiFaHuo} className='img'></Image>
+              待发货</View>
+            <View className='center-list'>
+              <Image src={daiShouHuo} className='img'></Image>
+              待收货</View>
+            <View className='center-list'>
+              <Image src={tuiHuo} className='img'></Image>
+              退换货</View>
+          </View>
+        </View>
+        <View className='list'>
+          <View className='list-li'>
+            <View className='left'>
+              <Image src={order} className='img'></Image>
+              历史订单
+            </View>
+            <View className='right'>
+              <View className='at-icon at-icon-chevron-right icon'></View>
+            </View>
+          </View>
+          <View className='list-li'>
+            <View className='left'>
+              <Image src={car} className='img'></Image>
+              购物车
+            </View>
+            <View className='right'>
+              <View className='at-icon at-icon-chevron-right icon'></View>
+            </View>
+          </View>
+          <View className='list-li'>
+            <View className='left'>
+              <Image src={local} className='img'></Image>
+              地址管理
+            </View>
+            <View className='right'>
+              <View className='at-icon at-icon-chevron-right icon'></View>
+            </View>
+          </View>
+          <View className='list-li last'>
+            <View className='left'>
+              <Image src={phone} className='img'></Image>
+              服务热线
+            </View>
+            <View className='right '>
+              <View className='at-icon at-icon-chevron-right icon'></View>
+            </View>
+          </View>
+        </View>
       </View>
     )
   }

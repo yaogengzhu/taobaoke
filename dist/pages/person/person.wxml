@@ -1,4 +1,83 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="index"><text>Hello world!</text>
+    <view class="person">
+        <view class="bg">
+            <view class="bg-box">
+                <view class="block1">
+                    <view class="left">
+                        <image src="{{user.avatar}}" class="avatarImg"></image>
+                    </view>
+                    <view class="right">
+                        <view class="nickname">{{user.nickname}}</view>
+                        <view class="time">上一次登录时间</view>
+                    </view>
+                </view>
+                <view class="block2">
+                    <view class="li">
+                        <view class="jf">2000</view>
+                        <view class="record">我的积分</view>
+                    </view>
+                    <view class="li">
+                        <view class="jf">200</view>
+                        <view class="record">我的收藏</view>
+                    </view>
+                    <view class="li">
+                        <view class="jf">39</view>
+                        <view class="record">关注店铺</view>
+                    </view>
+                    <view class="li">
+                        <view class="jf">410</view>
+                        <view class="record">我的浏览</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="menu">
+            <view class="top">
+                <view class="left">我的订单</view>
+                <view class="right">查看全部订单
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+            <view class="center">
+                <view class="center-list">
+                    <image src="{{daiFuKuan}}" class="img"></image>待付款</view>
+                <view class="center-list">
+                    <image src="{{daiFaHuo}}" class="img"></image>待发货</view>
+                <view class="center-list">
+                    <image src="{{daiShouHuo}}" class="img"></image>待收货</view>
+                <view class="center-list">
+                    <image src="{{tuiHuo}}" class="img"></image>退换货</view>
+            </view>
+        </view>
+        <view class="list">
+            <view class="list-li">
+                <view class="left">
+                    <image src="{{order}}" class="img"></image>历史订单</view>
+                <view class="right">
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+            <view class="list-li">
+                <view class="left">
+                    <image src="{{car}}" class="img"></image>购物车</view>
+                <view class="right">
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+            <view class="list-li">
+                <view class="left">
+                    <image src="{{local}}" class="img"></image>地址管理</view>
+                <view class="right">
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+            <view class="list-li last">
+                <view class="left">
+                    <image src="{{phone}}" class="img"></image>服务热线</view>
+                <view class="right ">
+                    <view class="at-icon at-icon-chevron-right icon"></view>
+                </view>
+            </view>
+        </view>
     </view>
 </block>

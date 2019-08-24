@@ -22,7 +22,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import './pserson.scss'
+var daiFuKuan = "/assets/images/daifukuan.png";
+var daiFaHuo = "/assets/images/daifahuo.png";
+var daiShouHuo = "/assets/images/daishouhuofuben.png";
+var tuiHuo = "/assets/images/icon5.png";
+var order = "/assets/images/order.png";
+var car = "/assets/images/car.png";
+var local = "/assets/images/local.png";
+var phone = "/assets/images/phone.png";
+
 var Index = (_temp2 = _class = function (_BaseComponent) {
   _inherits(Index, _BaseComponent);
 
@@ -37,13 +45,16 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.config = {
-      navigationBarTitleText: '首页'
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["daiFuKuan", "daiFaHuo", "daiShouHuo", "tuiHuo", "order", "car", "local", "phone", "userInfo", "user"], _this.config = {
+      navigationBarTitleText: '个人中心'
     }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
     key: "_constructor",
+
+
+    // 构造函数 
     value: function _constructor() {
       _get(Index.prototype.__proto__ || Object.getPrototypeOf(Index.prototype), "_constructor", this).apply(this, arguments);
       /**
@@ -53,14 +64,26 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
        * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
        * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
        */
+
+      // 设置状态值 
+      this.state = {
+        userInfo: {},
+        user: {}
+      };
       this.$$refs = [];
     }
   }, {
     key: "componentWillMount",
-    value: function componentWillMount() {}
+    value: function componentWillMount() {
+      // 调用获取用户信息的界面
+      this.getUser();
+    }
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      this.getMsg();
+      this.getUser();
+    }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {}
@@ -70,6 +93,30 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "componentDidHide",
     value: function componentDidHide() {}
+    // method
+
+  }, {
+    key: "getUser",
+    value: function getUser() {
+      var _this2 = this;
+
+      _index2.default.getUserInfo().then(function (res) {
+        // console.log(res)
+        _this2.setState({
+          userInfo: res.userInfo
+        });
+      });
+    }
+  }, {
+    key: "getMsg",
+    value: function getMsg() {
+      this.setState({
+        user: {
+          nickname: 'Victor',
+          avatar: 'https://wx.qlogo.cn/mmopen/vi_32/boS3icoNzmn9k5nCdeTjloVDP6EQ871E0Rt11egbR8aNk9Eer9zvxcw1Uq9H631qhBdge8asUGRuZUOnzngS1Ug/132'
+        }
+      });
+    }
   }, {
     key: "_createData",
     value: function _createData() {
@@ -78,7 +125,16 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      Object.assign(this.__state, {});
+      Object.assign(this.__state, {
+        daiFuKuan: daiFuKuan,
+        daiFaHuo: daiFaHuo,
+        daiShouHuo: daiShouHuo,
+        tuiHuo: tuiHuo,
+        order: order,
+        car: car,
+        local: local,
+        phone: phone
+      });
       return this.__state;
     }
   }]);

@@ -22,53 +22,30 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Index = (_temp2 = _class = function (_BaseComponent) {
-  _inherits(Index, _BaseComponent);
+var Man = (_temp2 = _class = function (_BaseComponent) {
+  _inherits(Man, _BaseComponent);
 
-  function Index() {
+  function Man() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, Index);
+    _classCallCheck(this, Man);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.config = {
-      navigationBarTitleText: '首页'
-    }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Man.__proto__ || Object.getPrototypeOf(Man)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(Index, [{
+  _createClass(Man, [{
     key: "_constructor",
-    value: function _constructor() {
-      _get(Index.prototype.__proto__ || Object.getPrototypeOf(Index.prototype), "_constructor", this).apply(this, arguments);
-      /**
-       * 指定config的类型声明为: Taro.Config
-       *
-       * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-       * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-       * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-       */
+    value: function _constructor(props) {
+      _get(Man.prototype.__proto__ || Object.getPrototypeOf(Man.prototype), "_constructor", this).call(this, props);
+
       this.$$refs = [];
     }
-  }, {
-    key: "componentWillMount",
-    value: function componentWillMount() {}
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {}
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {}
-  }, {
-    key: "componentDidShow",
-    value: function componentDidShow() {}
-  }, {
-    key: "componentDidHide",
-    value: function componentDidHide() {}
   }, {
     key: "_createData",
     value: function _createData() {
@@ -82,8 +59,8 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     }
   }]);
 
-  return Index;
-}(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/index/index", _temp2);
-exports.default = Index;
+  return Man;
+}(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/man/man", _temp2);
+exports.default = Man;
 
-Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Index, true));
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Man, true));
