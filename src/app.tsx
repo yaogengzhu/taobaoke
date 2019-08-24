@@ -25,7 +25,14 @@ class App extends Component {
     pages: [
       'pages/home/home',
       'pages/person/person',
-      'pages/man/man'
+      'pages/man/man',
+      'pages/bag/bag',
+      'pages/food/food',
+      'pages/meiz/meiz',
+      'pages/neiyi/neiyi',
+      'pages/shuma/shuma',
+      'pages/sport/sport',
+      'pages/women/women'
     ],
     window: {
       backgroundTextStyle: 'light',

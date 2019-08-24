@@ -1,0 +1,3 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>数码</view>
+</block>

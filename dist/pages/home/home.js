@@ -47,7 +47,7 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__50", "anonymousState__temp", "goodsList", "page"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__60", "anonymousState__temp", "goodsList", "page"], _this.config = {
       navigationBarTitleText: '首页',
       enablePullDownRefresh: false
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -142,6 +142,41 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
             url: '/pages/man/man'
           });
           break;
+        case 'neiyi':
+          _index2.default.navigateTo({
+            url: '/pages/neiyi/neiyi'
+          });
+          break;
+        case 'sport':
+          _index2.default.navigateTo({
+            url: '/pages/sport/sport'
+          });
+          break;
+        case 'meiz':
+          _index2.default.navigateTo({
+            url: '/pages/meiz/meiz'
+          });
+          break;
+        case 'shuma':
+          _index2.default.navigateTo({
+            url: '/pages/shuma/shuma'
+          });
+          break;
+        case 'women':
+          _index2.default.navigateTo({
+            url: '/pages/women/women'
+          });
+          break;
+        case 'women':
+          _index2.default.navigateTo({
+            url: '/pages/food/food'
+          });
+          break;
+        case 'bag':
+          _index2.default.navigateTo({
+            url: '/pages/bag/bag'
+          });
+          break;
       }
     }
     // render函数 
@@ -154,6 +189,34 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       return function () {
         _this4.anonymousFunc0 = function () {
           return _this4.jumpTopage('man');
+        };
+
+        _this4.anonymousFunc1 = function () {
+          return _this4.jumpTopage('neiyi');
+        };
+
+        _this4.anonymousFunc2 = function () {
+          return _this4.jumpTopage('sport');
+        };
+
+        _this4.anonymousFunc3 = function () {
+          return _this4.jumpTopage('meiz');
+        };
+
+        _this4.anonymousFunc4 = function () {
+          return _this4.jumpTopage('shuma');
+        };
+
+        _this4.anonymousFunc5 = function () {
+          return _this4.jumpTopage('women');
+        };
+
+        _this4.anonymousFunc6 = function () {
+          return _this4.jumpTopage('food');
+        };
+
+        _this4.anonymousFunc7 = function () {
+          return _this4.jumpTopage('bag');
         };
 
         return {
@@ -176,17 +239,17 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__50 = (0, _index.genCompid)(__prefix + "$compid__50");
+      var $compid__60 = (0, _index.genCompid)(__prefix + "$compid__60");
 
-      var anonymousState__temp = this._createNavData(__prefix + "mFNsMGEAgb")();
+      var anonymousState__temp = this._createNavData(__prefix + "SKGeqZYIEB")();
 
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__50);
+      }, $compid__60);
       Object.assign(this.__state, {
-        $compid__50: $compid__50,
+        $compid__60: $compid__60,
         anonymousState__temp: anonymousState__temp
       });
       return this.__state;
@@ -196,10 +259,45 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
     value: function anonymousFunc0(e) {
       ;
     }
+  }, {
+    key: "anonymousFunc1",
+    value: function anonymousFunc1(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc2",
+    value: function anonymousFunc2(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc3",
+    value: function anonymousFunc3(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc4",
+    value: function anonymousFunc4(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc5",
+    value: function anonymousFunc5(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc6",
+    value: function anonymousFunc6(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc7",
+    value: function anonymousFunc7(e) {
+      ;
+    }
   }]);
 
   return Home;
-}(_index.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/home/home", _temp2);
+}(_index.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5", "anonymousFunc6", "anonymousFunc7"], _class.$$componentPath = "pages/home/home", _temp2);
 exports.default = Home;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Home, true));

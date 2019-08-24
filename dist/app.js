@@ -42,7 +42,7 @@ var _App = function (_BaseComponent) {
     var _this = _possibleConstructorReturn(this, (_App.__proto__ || Object.getPrototypeOf(_App)).apply(this, arguments));
 
     _this.config = {
-      pages: ['pages/home/home', 'pages/person/person', 'pages/man/man'],
+      pages: ['pages/home/home', 'pages/person/person', 'pages/man/man', 'pages/bag/bag', 'pages/food/food', 'pages/meiz/meiz', 'pages/neiyi/neiyi', 'pages/shuma/shuma', 'pages/sport/sport', 'pages/women/women'],
       window: {
         backgroundTextStyle: 'light',
         navigationBarBackgroundColor: '#fff',
