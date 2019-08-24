@@ -47,7 +47,7 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__43", "anonymousState__temp", "goodsList", "page"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__50", "anonymousState__temp", "goodsList", "page"], _this.config = {
       navigationBarTitleText: '首页',
       enablePullDownRefresh: false
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -120,7 +120,6 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
           'page_no': this.state.page
         }
       }).then(function (res) {
-        // console.log(res)
         if (_this3.state.page === 1) {
           _this3.setState({
             goodsList: res.data.uatm_tbk_item
@@ -132,12 +131,31 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
         }
       });
     }
+    // 跳转函数 
+
+  }, {
+    key: "jumpTopage",
+    value: function jumpTopage(type) {
+      switch (type) {
+        case 'man':
+          _index2.default.navigateTo({
+            url: '/pages/man/man'
+          });
+          break;
+      }
+    }
     // render函数 
 
   }, {
     key: "_createNavData",
     value: function _createNavData(_$uid) {
+      var _this4 = this;
+
       return function () {
+        _this4.anonymousFunc0 = function () {
+          return _this4.jumpTopage('man');
+        };
+
         return {
           man: man,
           neiyi: neiyi,
@@ -158,25 +176,30 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__43 = (0, _index.genCompid)(__prefix + "$compid__43");
+      var $compid__50 = (0, _index.genCompid)(__prefix + "$compid__50");
 
-      var anonymousState__temp = this._createNavData(__prefix + "ldmWgWGXTn")();
+      var anonymousState__temp = this._createNavData(__prefix + "mFNsMGEAgb")();
 
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__43);
+      }, $compid__50);
       Object.assign(this.__state, {
-        $compid__43: $compid__43,
+        $compid__50: $compid__50,
         anonymousState__temp: anonymousState__temp
       });
       return this.__state;
     }
+  }, {
+    key: "anonymousFunc0",
+    value: function anonymousFunc0(e) {
+      ;
+    }
   }]);
 
   return Home;
-}(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/home/home", _temp2);
+}(_index.Component), _class.$$events = ["anonymousFunc0"], _class.$$componentPath = "pages/home/home", _temp2);
 exports.default = Home;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Home, true));
