@@ -1,7 +1,7 @@
 <template name="renderNav">
     <block>
         <view class="block1">
-            <view class="list" hover-class="hover-bg">
+            <view class="list" hover-class="hover-bg" bindtap="anonymousFunc0">
                 <image src="{{man}}" class="srcImg"></image>男装</view>
             <view class="list" hover-class="hover-bg">
                 <image src="{{neiyi}}" class="srcImg"></image>内衣</view>
@@ -42,7 +42,7 @@
             </swiper>
         </view>
         <view>
-            <at-noticebar compid="{{$compid__43}}"><text class="tip">特别通知：小程序正在开发中</text>
+            <at-noticebar compid="{{$compid__50}}"><text class="tip">特别通知：小程序正在开发中</text>
             </at-noticebar>
         </view>
         <template is="renderNav" data="{{...anonymousState__temp}}"></template>

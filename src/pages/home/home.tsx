@@ -81,7 +81,6 @@ export default class Home extends Component<IProps, IState> {
         'page_no': this.state.page,
       }
     }).then(res => {
-      // console.log(res)
       if (this.state.page === 1) {
         this.setState({
           goodsList: res.data.uatm_tbk_item
@@ -94,11 +93,22 @@ export default class Home extends Component<IProps, IState> {
     })
   }
 
+  // 跳转函数 
+  jumpTopage(type) {
+    switch(type) {
+      case 'man' :
+        Taro.navigateTo({
+          url: '/pages/man/man'
+        })
+        break
+    }
+  }
+
   // render函数 
   renderNav() {
     return (
       <View className='block1'>
-        <View className='list' hover-class='hover-bg'>
+        <View className='list' hover-class='hover-bg' onClick={() => this.jumpTopage('man')}>
           <Image src={man} className='srcImg'></Image>
           男装
       </View>
