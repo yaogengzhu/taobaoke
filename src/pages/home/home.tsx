@@ -95,10 +95,45 @@ export default class Home extends Component<IProps, IState> {
 
   // 跳转函数 
   jumpTopage(type) {
-    switch(type) {
-      case 'man' :
+    switch (type) {
+      case 'man':
         Taro.navigateTo({
           url: '/pages/man/man'
+        })
+        break
+      case 'neiyi':
+        Taro.navigateTo({
+          url: '/pages/neiyi/neiyi'
+        })
+        break
+      case 'sport':
+        Taro.navigateTo({
+          url: '/pages/sport/sport'
+        })
+        break
+      case 'meiz':
+        Taro.navigateTo({
+          url: '/pages/meiz/meiz'
+        })
+        break
+      case 'shuma':
+        Taro.navigateTo({
+          url: '/pages/shuma/shuma'
+        })
+        break
+      case 'women':
+        Taro.navigateTo({
+          url: '/pages/women/women'
+        })
+        break
+      case 'women':
+        Taro.navigateTo({
+          url: '/pages/food/food'
+        })
+        break
+      case 'bag':
+        Taro.navigateTo({
+          url: '/pages/bag/bag'
         })
         break
     }
@@ -112,31 +147,31 @@ export default class Home extends Component<IProps, IState> {
           <Image src={man} className='srcImg'></Image>
           男装
       </View>
-        <View className='list' hover-class='hover-bg'>
+        <View className='list' hover-class='hover-bg' onClick={() => this.jumpTopage('neiyi')}>
           <Image src={neiyi} className='srcImg'></Image>
           内衣
       </View>
-        <View className='list' hover-class='hover-bg'>
+        <View className='list' hover-class='hover-bg' onClick={() => this.jumpTopage('sport')}>
           <Image src={sport} className='srcImg' ></Image>
           运动用品
       </View>
-        <View className='list' hover-class='hover-bg'>
+        <View className='list' hover-class='hover-bg' onClick={() => this.jumpTopage('meiz')}>
           <Image src={meiz} className='srcImg'></Image>
           美妆
       </View>
-        <View className='list' hover-class='hover-bg'>
+        <View className='list' hover-class='hover-bg' onClick={() => this.jumpTopage('shuma')}>
           <Image src={shuama} className='srcImg'></Image>
           数码家电
       </View>
-        <View className='list' hover-class='hover-bg'>
+        <View className='list' hover-class='hover-bg' onClick={() => this.jumpTopage('women')}>
           <Image src={women} className='srcImg'></Image>
           女装
       </View>
-        <View className='list' hover-class='hover-bg'>
+        <View className='list' hover-class='hover-bg' onClick={() => this.jumpTopage('food')}>
           <Image src={food} className='srcImg'></Image>
           食品
       </View>
-        <View className='list' hover-class='hover-bg'>
+        <View className='list' hover-class='hover-bg' onClick={() => this.jumpTopage('bag')}>
           <Image src={bag} className='srcImg'></Image>
           鞋包配饰
       </View>

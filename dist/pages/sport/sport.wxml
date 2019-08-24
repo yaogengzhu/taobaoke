@@ -1,0 +1,3 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>运动</view>
+</block>
