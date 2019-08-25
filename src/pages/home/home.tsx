@@ -140,6 +140,17 @@ export default class Home extends Component<IProps, IState> {
   }
 
   // render函数 
+  // 搜索
+  renderSearch() {
+    return(
+      <View className='search'>
+        <View className='search-box'>
+          请输入搜索内容
+        </View>
+      </View>
+    )
+  }
+
   renderNav() {
     return (
       <View className='block1'>
@@ -184,6 +195,7 @@ export default class Home extends Component<IProps, IState> {
   render() {
     return (
       <View>
+        { this.renderSearch()}
         <View className='lunbotu'>
           <Swiper
             className='test-h'

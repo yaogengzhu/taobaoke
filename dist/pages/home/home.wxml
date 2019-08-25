@@ -1,3 +1,10 @@
+<template name="renderSearch">
+    <block>
+        <view class="search">
+            <view class="search-box">请输入搜索内容</view>
+        </view>
+    </block>
+</template>
 <template name="renderNav">
     <block>
         <view class="block1">
@@ -22,6 +29,7 @@
 </template>
 <block wx:if="{{$taroCompReady}}">
     <view>
+        <template is="renderSearch" data="{{...anonymousState__temp}}"></template>
         <view class="lunbotu">
             <swiper class="test-h" indicator-color="#333" indicator-active-color="#1296db" circular="{{true}}" indicator-dots="{{true}}" autoplay="{{true}}">
                 <swiper-item>
@@ -42,10 +50,10 @@
             </swiper>
         </view>
         <view>
-            <at-noticebar compid="{{$compid__64}}"><text class="tip">特别通知：小程序正在开发中</text>
+            <at-noticebar compid="{{$compid__2}}"><text class="tip">特别通知：小程序正在开发中</text>
             </at-noticebar>
         </view>
-        <template is="renderNav" data="{{...anonymousState__temp}}"></template>
+        <template is="renderNav" data="{{...anonymousState__temp2}}"></template>
         <view class="hot">热<text class="line">/</text>搜<text class="line">/</text>榜<text class="line">/</text>推<text class="line">/</text>荐</view>
         <view class="goodsBox" wx:key="num_iid" wx:for="{{goodsList}}" wx:for-item="item" wx:for-index="_anonIdx2">
             <view class="left">

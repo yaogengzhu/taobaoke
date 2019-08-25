@@ -47,7 +47,7 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__64", "anonymousState__temp", "goodsList", "page"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__2", "anonymousState__temp", "anonymousState__temp2", "goodsList", "page"], _this.config = {
       navigationBarTitleText: '首页',
       enablePullDownRefresh: false
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -180,7 +180,15 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       }
     }
     // render函数 
+    // 搜索
 
+  }, {
+    key: "_createSearchData",
+    value: function _createSearchData(_$uid) {
+      return function () {
+        return {};
+      };
+    }
   }, {
     key: "_createNavData",
     value: function _createNavData(_$uid) {
@@ -239,18 +247,21 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__64 = (0, _index.genCompid)(__prefix + "$compid__64");
+      var $compid__2 = (0, _index.genCompid)(__prefix + "$compid__2");
 
-      var anonymousState__temp = this._createNavData(__prefix + "zhWAXkmhyc")();
+      var anonymousState__temp = this._createSearchData(__prefix + "NyRoEVhoBt")();
+
+      var anonymousState__temp2 = this._createNavData(__prefix + "PWOCTrdfeT")();
 
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__64);
+      }, $compid__2);
       Object.assign(this.__state, {
-        $compid__64: $compid__64,
-        anonymousState__temp: anonymousState__temp
+        $compid__2: $compid__2,
+        anonymousState__temp: anonymousState__temp,
+        anonymousState__temp2: anonymousState__temp2
       });
       return this.__state;
     }

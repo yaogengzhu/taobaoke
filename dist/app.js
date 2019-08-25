@@ -45,9 +45,9 @@ var _App = function (_BaseComponent) {
       pages: ['pages/home/home', 'pages/person/person', 'pages/man/man', 'pages/bag/bag', 'pages/food/food', 'pages/meiz/meiz', 'pages/neiyi/neiyi', 'pages/shuma/shuma', 'pages/sport/sport', 'pages/women/women'],
       window: {
         backgroundTextStyle: 'light',
-        navigationBarBackgroundColor: '#fff',
-        navigationBarTitleText: 'WeChat',
-        navigationBarTextStyle: 'black'
+        navigationBarBackgroundColor: '#1296db',
+        navigationBarTitleText: '懂你小程序',
+        navigationBarTextStyle: 'white'
       },
       "tabBar": {
         "list": [{

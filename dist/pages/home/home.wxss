@@ -10,6 +10,39 @@
 .tip {
   font-size: 20rpx; }
 
+.search {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100rpx;
+  background-color: #1296db;
+  z-index: 999; }
+  .search .search-box {
+    width: 90%;
+    height: 60rpx;
+    border-radius: 60rpx;
+    border: 1rpx solid #f2f2f2;
+    padding: 10rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center; }
+
 .block1 {
   display: -webkit-box;
   display: -webkit-flex;

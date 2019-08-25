@@ -36,9 +36,9 @@ class App extends Component {
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarBackgroundColor: '#1296db',
+      navigationBarTitleText: '懂你小程序',
+      navigationBarTextStyle: 'white'
     },
     "tabBar": {
       "list": [
