@@ -138,12 +138,18 @@ export default class Home extends Component<IProps, IState> {
         break
     }
   }
+ 
+  jumpToSearch() {
+    Taro.navigateTo({
+      url: '/pages/search/search'
+    })
+  }
 
   // render函数 
   // 搜索
   renderSearch() {
     return(
-      <View className='search'>
+      <View className='search' onClick={() => this.jumpToSearch()}>
         <View className='search-box'>
           请输入搜索内容
         </View>

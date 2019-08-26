@@ -32,7 +32,8 @@ class App extends Component {
       'pages/neiyi/neiyi',
       'pages/shuma/shuma',
       'pages/sport/sport',
-      'pages/women/women'
+      'pages/women/women',
+      'pages/search/search'
     ],
     window: {
       backgroundTextStyle: 'light',

@@ -1,6 +1,6 @@
 <template name="renderSearch">
     <block>
-        <view class="search">
+        <view class="search" bindtap="anonymousFunc0">
             <view class="search-box">请输入搜索内容</view>
         </view>
     </block>
@@ -8,21 +8,21 @@
 <template name="renderNav">
     <block>
         <view class="block1">
-            <view class="list" hover-class="hover-bg" bindtap="anonymousFunc0">
-                <image src="{{man}}" class="srcImg"></image>男装</view>
             <view class="list" hover-class="hover-bg" bindtap="anonymousFunc1">
-                <image src="{{neiyi}}" class="srcImg"></image>内衣</view>
+                <image src="{{man}}" class="srcImg"></image>男装</view>
             <view class="list" hover-class="hover-bg" bindtap="anonymousFunc2">
-                <image src="{{sport}}" class="srcImg"></image>运动用品</view>
+                <image src="{{neiyi}}" class="srcImg"></image>内衣</view>
             <view class="list" hover-class="hover-bg" bindtap="anonymousFunc3">
-                <image src="{{meiz}}" class="srcImg"></image>美妆</view>
+                <image src="{{sport}}" class="srcImg"></image>运动用品</view>
             <view class="list" hover-class="hover-bg" bindtap="anonymousFunc4">
-                <image src="{{shuama}}" class="srcImg"></image>数码家电</view>
+                <image src="{{meiz}}" class="srcImg"></image>美妆</view>
             <view class="list" hover-class="hover-bg" bindtap="anonymousFunc5">
-                <image src="{{women}}" class="srcImg"></image>女装</view>
+                <image src="{{shuama}}" class="srcImg"></image>数码家电</view>
             <view class="list" hover-class="hover-bg" bindtap="anonymousFunc6">
-                <image src="{{food}}" class="srcImg"></image>食品</view>
+                <image src="{{women}}" class="srcImg"></image>女装</view>
             <view class="list" hover-class="hover-bg" bindtap="anonymousFunc7">
+                <image src="{{food}}" class="srcImg"></image>食品</view>
+            <view class="list" hover-class="hover-bg" bindtap="anonymousFunc8">
                 <image src="{{bag}}" class="srcImg"></image>鞋包配饰</view>
         </view>
     </block>
@@ -50,7 +50,7 @@
             </swiper>
         </view>
         <view>
-            <at-noticebar compid="{{$compid__2}}"><text class="tip">特别通知：小程序正在开发中</text>
+            <at-noticebar compid="{{$compid__6}}"><text class="tip">特别通知：小程序正在开发中</text>
             </at-noticebar>
         </view>
         <template is="renderNav" data="{{...anonymousState__temp2}}"></template>

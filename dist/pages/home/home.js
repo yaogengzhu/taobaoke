@@ -47,7 +47,7 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__2", "anonymousState__temp", "anonymousState__temp2", "goodsList", "page"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__6", "anonymousState__temp", "anonymousState__temp2", "goodsList", "page"], _this.config = {
       navigationBarTitleText: '首页',
       enablePullDownRefresh: false
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -179,52 +179,65 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
           break;
       }
     }
+  }, {
+    key: "jumpToSearch",
+    value: function jumpToSearch() {
+      _index2.default.navigateTo({
+        url: '/pages/search/search'
+      });
+    }
     // render函数 
     // 搜索
 
   }, {
     key: "_createSearchData",
     value: function _createSearchData(_$uid) {
+      var _this4 = this;
+
       return function () {
+        _this4.anonymousFunc0 = function () {
+          return _this4.jumpToSearch();
+        };
+
         return {};
       };
     }
   }, {
     key: "_createNavData",
     value: function _createNavData(_$uid) {
-      var _this4 = this;
+      var _this5 = this;
 
       return function () {
-        _this4.anonymousFunc0 = function () {
-          return _this4.jumpTopage('man');
+        _this5.anonymousFunc1 = function () {
+          return _this5.jumpTopage('man');
         };
 
-        _this4.anonymousFunc1 = function () {
-          return _this4.jumpTopage('neiyi');
+        _this5.anonymousFunc2 = function () {
+          return _this5.jumpTopage('neiyi');
         };
 
-        _this4.anonymousFunc2 = function () {
-          return _this4.jumpTopage('sport');
+        _this5.anonymousFunc3 = function () {
+          return _this5.jumpTopage('sport');
         };
 
-        _this4.anonymousFunc3 = function () {
-          return _this4.jumpTopage('meiz');
+        _this5.anonymousFunc4 = function () {
+          return _this5.jumpTopage('meiz');
         };
 
-        _this4.anonymousFunc4 = function () {
-          return _this4.jumpTopage('shuma');
+        _this5.anonymousFunc5 = function () {
+          return _this5.jumpTopage('shuma');
         };
 
-        _this4.anonymousFunc5 = function () {
-          return _this4.jumpTopage('women');
+        _this5.anonymousFunc6 = function () {
+          return _this5.jumpTopage('women');
         };
 
-        _this4.anonymousFunc6 = function () {
-          return _this4.jumpTopage('food');
+        _this5.anonymousFunc7 = function () {
+          return _this5.jumpTopage('food');
         };
 
-        _this4.anonymousFunc7 = function () {
-          return _this4.jumpTopage('bag');
+        _this5.anonymousFunc8 = function () {
+          return _this5.jumpTopage('bag');
         };
 
         return {
@@ -247,19 +260,19 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__2 = (0, _index.genCompid)(__prefix + "$compid__2");
+      var $compid__6 = (0, _index.genCompid)(__prefix + "$compid__6");
 
-      var anonymousState__temp = this._createSearchData(__prefix + "NyRoEVhoBt")();
+      var anonymousState__temp = this._createSearchData(__prefix + "GIcIDuwdeu")();
 
-      var anonymousState__temp2 = this._createNavData(__prefix + "PWOCTrdfeT")();
+      var anonymousState__temp2 = this._createNavData(__prefix + "DeveppuXlY")();
 
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__2);
+      }, $compid__6);
       Object.assign(this.__state, {
-        $compid__2: $compid__2,
+        $compid__6: $compid__6,
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2
       });
@@ -305,10 +318,15 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
     value: function anonymousFunc7(e) {
       ;
     }
+  }, {
+    key: "anonymousFunc8",
+    value: function anonymousFunc8(e) {
+      ;
+    }
   }]);
 
   return Home;
-}(_index.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5", "anonymousFunc6", "anonymousFunc7"], _class.$$componentPath = "pages/home/home", _temp2);
+}(_index.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3", "anonymousFunc4", "anonymousFunc5", "anonymousFunc6", "anonymousFunc7", "anonymousFunc8"], _class.$$componentPath = "pages/home/home", _temp2);
 exports.default = Home;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Home, true));

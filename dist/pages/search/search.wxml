@@ -1,0 +1,15 @@
+<template name="renderSearch">
+    <block>
+        <view class="search-box">
+            <view class="input_box">
+                <input class="input" placeholder="请输入搜索的内容" placeholder-style="color:#fff" bindinput="anonymousFunc0" />
+                <view class="input_icon at-icon at-icon-search" bindtap="anonymousFunc1"></view>
+            </view>
+        </view>
+    </block>
+</template>
+<block wx:if="{{$taroCompReady}}">
+    <view class="search">
+        <template is="renderSearch" data="{{...anonymousState__temp}}"></template>
+    </view>
+</block>
