@@ -3,7 +3,6 @@ import Home from './pages/home/home'
 
 // 全局引入taro-ui样式
 import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
-
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools

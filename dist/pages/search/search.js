@@ -42,7 +42,7 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "kw"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "kw", "current"], _this.config = {
       navigationBarTitleText: '搜索'
     }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -54,7 +54,8 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       // 页面基本配置
 
       this.state = {
-        kw: ''
+        kw: '',
+        current: 1
       };
       this.$$refs = [];
     }
@@ -75,11 +76,27 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
         kw: kw
       });
     }
-    // 根据关键字搜索
+    // 根据关键字搜索店铺
 
   }, {
-    key: "searchByKw",
-    value: function searchByKw() {
+    key: "searchByKwShop",
+    value: function searchByKwShop() {
+      _index4.default.jsonRPC({
+        url: '/2/search_shops',
+        data: {
+          kw: this.state.kw,
+          page_no: 1,
+          page_size: 20
+        }
+      }).then(function (res) {
+        console.log(res);
+      });
+    }
+    // 根据关键字搜索宝贝
+
+  }, {
+    key: "searchByKwProduct",
+    value: function searchByKwProduct() {
       _index4.default.jsonRPC({
         url: '/2/search_goods',
         data: {
@@ -91,7 +108,26 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
         console.log(res);
       });
     }
-    // 监听函数
+    // 判断调用哪个接口
+
+  }, {
+    key: "toSearch",
+    value: function toSearch() {
+      console.log('eeee');
+      var current = this.state.current;
+      if (current === 1) {
+        this.searchByKwProduct();
+      } else if (current === 2) {
+        this.searchByKwShop();
+      }
+    }
+  }, {
+    key: "chooseTabs",
+    value: function chooseTabs(num) {
+      this.setState({
+        current: num
+      });
+    }
     // render 函数页面
 
   }, {
@@ -104,11 +140,46 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
           return _this2.getInputValue(e);
         };
 
-        _this2.anonymousFunc1 = function (e) {
-          return _this2.searchByKw(e);
+        _this2.anonymousFunc1 = function () {
+          return _this2.toSearch();
         };
 
         return {};
+      };
+    }
+  }, {
+    key: "_createTabsData",
+    value: function _createTabsData(_$uid) {
+      var _this3 = this;
+
+      return function () {
+        var current = _this3.state.current;
+
+
+        _this3.anonymousFunc2 = function () {
+          return _this3.chooseTabs(1);
+        };
+
+        _this3.anonymousFunc3 = function () {
+          return _this3.chooseTabs(2);
+        };
+
+        return {
+          current: current
+        };
+      };
+    }
+  }, {
+    key: "_createBodyData",
+    value: function _createBodyData(_$uid) {
+      var _this4 = this;
+
+      return function () {
+        var current = _this4.state.current;
+
+        return {
+          current: current
+        };
       };
     }
   }, {
@@ -120,10 +191,16 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var anonymousState__temp = this._createSearchData(__prefix + "AmktkNmYOQ")();
+      var anonymousState__temp = this._createSearchData(__prefix + "mlPDycuaRW")();
+
+      var anonymousState__temp2 = this._createTabsData(__prefix + "igreUwnyej")();
+
+      var anonymousState__temp3 = this._createBodyData(__prefix + "eaLHNRUlDE")();
 
       Object.assign(this.__state, {
-        anonymousState__temp: anonymousState__temp
+        anonymousState__temp: anonymousState__temp,
+        anonymousState__temp2: anonymousState__temp2,
+        anonymousState__temp3: anonymousState__temp3
       });
       return this.__state;
     }
@@ -137,10 +214,20 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
     value: function anonymousFunc1(e) {
       ;
     }
+  }, {
+    key: "anonymousFunc2",
+    value: function anonymousFunc2(e) {
+      ;
+    }
+  }, {
+    key: "anonymousFunc3",
+    value: function anonymousFunc3(e) {
+      ;
+    }
   }]);
 
   return Search;
-}(_index.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc1"], _class.$$componentPath = "pages/search/search", _temp2);
+}(_index.Component), _class.$$events = ["anonymousFunc0", "anonymousFunc1", "anonymousFunc2", "anonymousFunc3"], _class.$$componentPath = "pages/search/search", _temp2);
 exports.default = Search;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Search, true));

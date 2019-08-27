@@ -8,8 +8,36 @@
         </view>
     </block>
 </template>
+<template name="renderTabs">
+    <block>
+        <view class="search-tabs">
+            <view class="tabs1 ">
+                <view class="{{'product ' + (current === 1 ? 'active' : '')}}" bindtap="anonymousFunc2">宝贝</view>
+            </view>
+            <view class="tabs2">
+                <view class="{{'shop ' + (current === 2 ? ' active' : '')}}" bindtap="anonymousFunc3">店铺</view>
+            </view>
+        </view>
+    </block>
+</template>
+<template name="renderBody">
+    <block>
+        <view class="search-body">
+            <block>
+                <block wx:if="{{current === 1}}">
+                    <view class="body1">宝贝信息</view>
+                </block>
+                <block wx:else>
+                    <view class="body2">店铺信息</view>
+                </block>
+            </block>
+        </view>
+    </block>
+</template>
 <block wx:if="{{$taroCompReady}}">
     <view class="search">
         <template is="renderSearch" data="{{...anonymousState__temp}}"></template>
+        <template is="renderTabs" data="{{...anonymousState__temp2}}"></template>
+        <template is="renderBody" data="{{...anonymousState__temp3}}"></template>
     </view>
 </block>

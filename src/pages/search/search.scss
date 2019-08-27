@@ -1,38 +1,80 @@
+page {
+  box-sizing: border-box;
+}
 .search {
-    .search-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        background-color:  #1296db;
+  .search-box {
+    display: flex;
+    flex-direction: columnl;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #1296db;
+    color: #fff;
+    position: sticky;
+    top: 0;
+
+    .input_box {
+      position: relative;
+      width: 90%;
+      height: 60px;
+      border-radius: 60px;
+      border: 1px solid #fff;
+
+      .input {
+        width: 80%;
+        height: 60px;
+        font-size: 26px;
         color: #fff;
+        padding: 0 20px;
+      }
 
-        .input_box {
-            position: relative;
-            width: 90%;
-            height: 60px;
-            border-radius: 60px;
-            border: 1px solid #fff;
-  
-
-            .input {
-                width: 80%;
-                height: 60px; 
-                font-size: 26px;
-                color: #fff;
-                padding: 0 20px;
-            }
-
-            .input_icon {
-                position: absolute;
-                top: 14px;
-                right: 10px;
-                width: 40px;
-                height: 40px;
-                border-radius: 40px;
-               
-            }
-        }
+      .input_icon {
+        position: absolute;
+        top: 14px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+      }
     }
+  }
+
+  .search-tabs {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    background-color: #1296db;
+
+    .tabs1,
+    .tabs2 {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      font-size: 24px;
+      color: #fff;
+      line-height: 60px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .product {
+      width: 200px;
+      box-sizing: border-box;
+    }
+
+    .shop {
+      width: 200px;
+      box-sizing: border-box;
+    }
+
+    .active {
+      border-bottom: 4px solid #f40;
+    }
+  }
+  .search-body {
+      // height: 2000px;
+  }
 }
