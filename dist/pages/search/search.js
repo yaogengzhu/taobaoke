@@ -42,7 +42,7 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp2", "anonymousState__temp3", "kw", "current"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp5", "anonymousState__temp6", "anonymousState__temp7", "kw", "current", "goodsInfo", "page", "page_shop", "shopInfo"], _this.config = {
       navigationBarTitleText: '搜索'
     }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -55,7 +55,11 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
 
       this.state = {
         kw: '',
-        current: 1
+        current: 1,
+        goodsInfo: [],
+        page: 1,
+        page_shop: 1,
+        shopInfo: []
       };
       this.$$refs = [];
     }
@@ -69,6 +73,17 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
     // method
 
   }, {
+    key: "onReachBottom",
+    value: function onReachBottom() {
+      var _this2 = this;
+
+      this.setState({
+        page: this.state.page + 1
+      }, function () {
+        _this2.searchByKwProduct();
+      });
+    }
+  }, {
     key: "getInputValue",
     value: function getInputValue(e) {
       var kw = e.detail.value;
@@ -81,15 +96,20 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "searchByKwShop",
     value: function searchByKwShop() {
+      var _this3 = this;
+
       _index4.default.jsonRPC({
         url: '/2/search_shops',
         data: {
           kw: this.state.kw,
-          page_no: 1,
+          page_no: this.state.page,
           page_size: 20
         }
       }).then(function (res) {
         console.log(res);
+        _this3.setState({
+          shopInfo: res.data.results.n_tbk_shop
+        });
       });
     }
     // 根据关键字搜索宝贝
@@ -97,15 +117,27 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "searchByKwProduct",
     value: function searchByKwProduct() {
+      var _this4 = this;
+
       _index4.default.jsonRPC({
         url: '/2/search_goods',
         data: {
           kw: this.state.kw,
-          page_no: 1,
+          page_no: this.state.page,
           page_size: 20
         }
       }).then(function (res) {
-        console.log(res);
+        // console.log(res)
+        var goodsInfo = res.data.result_list.map_data;
+        if (_this4.state.page === 1) {
+          _this4.setState({
+            goodsInfo: goodsInfo
+          });
+        } else {
+          _this4.setState({
+            goodsInfo: _this4.state.goodsInfo.concat(goodsInfo)
+          });
+        }
       });
     }
     // 判断调用哪个接口
@@ -116,6 +148,10 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       console.log('eeee');
       var current = this.state.current;
       if (current === 1) {
+        // 先清空数据
+        this.setState({
+          goodsInfo: []
+        });
         this.searchByKwProduct();
       } else if (current === 2) {
         this.searchByKwShop();
@@ -133,15 +169,15 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "_createSearchData",
     value: function _createSearchData(_$uid) {
-      var _this2 = this;
+      var _this5 = this;
 
       return function () {
-        _this2.anonymousFunc0 = function (e) {
-          return _this2.getInputValue(e);
+        _this5.anonymousFunc0 = function (e) {
+          return _this5.getInputValue(e);
         };
 
-        _this2.anonymousFunc1 = function () {
-          return _this2.toSearch();
+        _this5.anonymousFunc1 = function () {
+          return _this5.toSearch();
         };
 
         return {};
@@ -150,18 +186,18 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "_createTabsData",
     value: function _createTabsData(_$uid) {
-      var _this3 = this;
+      var _this6 = this;
 
       return function () {
-        var current = _this3.state.current;
+        var current = _this6.state.current;
 
 
-        _this3.anonymousFunc2 = function () {
-          return _this3.chooseTabs(1);
+        _this6.anonymousFunc2 = function () {
+          return _this6.chooseTabs(1);
         };
 
-        _this3.anonymousFunc3 = function () {
-          return _this3.chooseTabs(2);
+        _this6.anonymousFunc3 = function () {
+          return _this6.chooseTabs(2);
         };
 
         return {
@@ -169,16 +205,62 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
         };
       };
     }
+    // 渲染宝贝信息render
+
+
+  }, {
+    key: "_createProductData",
+    value: function _createProductData(_$uid) {
+      var _this7 = this;
+
+      return function () {
+        var goodsInfo = _this7.state.goodsInfo;
+
+        return {
+          goodsInfo: goodsInfo
+        };
+      };
+    }
+  }, {
+    key: "_createShopsData",
+    value: function _createShopsData(_$uid) {
+      var _this8 = this;
+
+      return function () {
+        var shopInfo = _this8.state.shopInfo;
+
+        var loopArray31 = shopInfo.map(function (item, _anonIdx3) {
+          item = {
+            $original: (0, _index.internal_get_original)(item)
+          };
+          var $loopState__temp2 = 1;
+          return {
+            $loopState__temp2: $loopState__temp2,
+            $original: item.$original
+          };
+        });
+        return {
+          loopArray31: loopArray31,
+          shopInfo: shopInfo
+        };
+      };
+    }
   }, {
     key: "_createBodyData",
     value: function _createBodyData(_$uid) {
-      var _this4 = this;
+      var _this9 = this;
 
       return function () {
-        var current = _this4.state.current;
+        var current = _this9.state.current;
+
+        var anonymousState__temp3 = current === 1 ? _this9._createProductData(_$uid + "YifwrMuwqV")() : null;
+
+        var anonymousState__temp4 = _this9._createShopsData(_$uid + "YUchGMOCwA")();
 
         return {
-          current: current
+          current: current,
+          anonymousState__temp3: anonymousState__temp3,
+          anonymousState__temp4: anonymousState__temp4
         };
       };
     }
@@ -191,16 +273,16 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var anonymousState__temp = this._createSearchData(__prefix + "djObPzGwSY")();
+      var anonymousState__temp5 = this._createSearchData(__prefix + "NkbqaueBJp")();
 
-      var anonymousState__temp2 = this._createTabsData(__prefix + "PWkVNBzVSR")();
+      var anonymousState__temp6 = this._createTabsData(__prefix + "yHIgXQBwqJ")();
 
-      var anonymousState__temp3 = this._createBodyData(__prefix + "ONLtGSvvps")();
+      var anonymousState__temp7 = this._createBodyData(__prefix + "grrZjkZIph")();
 
       Object.assign(this.__state, {
-        anonymousState__temp: anonymousState__temp,
-        anonymousState__temp2: anonymousState__temp2,
-        anonymousState__temp3: anonymousState__temp3
+        anonymousState__temp5: anonymousState__temp5,
+        anonymousState__temp6: anonymousState__temp6,
+        anonymousState__temp7: anonymousState__temp7
       });
       return this.__state;
     }

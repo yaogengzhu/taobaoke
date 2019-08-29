@@ -46,7 +46,7 @@ var _App = function (_BaseComponent) {
       window: {
         backgroundTextStyle: 'light',
         navigationBarBackgroundColor: '#1296db',
-        navigationBarTitleText: '懂你小程序',
+        navigationBarTitleText: '小芒果日记',
         navigationBarTextStyle: 'white'
       },
       "tabBar": {

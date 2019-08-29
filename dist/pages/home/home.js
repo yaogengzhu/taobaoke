@@ -262,9 +262,9 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       ;
       var $compid__0 = (0, _index.genCompid)(__prefix + "$compid__0");
 
-      var anonymousState__temp = this._createSearchData(__prefix + "KWXtXmRGgw")();
+      var anonymousState__temp = this._createSearchData(__prefix + "JrTSEmEVGN")();
 
-      var anonymousState__temp2 = this._createNavData(__prefix + "VObyrrZpcl")();
+      var anonymousState__temp2 = this._createNavData(__prefix + "fGgVdopYhN")();
 
       _index.propsManager.set({
         "marquee": true,

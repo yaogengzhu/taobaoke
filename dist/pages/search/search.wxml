@@ -20,15 +20,58 @@
         </view>
     </block>
 </template>
+<template name="renderProduct">
+    <block>
+        <view class="goods">
+            <view class="goodsBox" wx:key="item_id" wx:for="{{goodsInfo}}" wx:for-item="item" wx:for-index="_anonIdx2">
+                <view class="left">
+                    <image src="{{item.pict_url}}" class="imgSrc"></image>
+                </view>
+                <view class="right">
+                    <view class="title">{{item.title}}</view>
+                    <view class="price">
+                        <view class="oldPrice">¥{{item.coupon_start_fee}}</view>
+                        <view class="newPrice"></view>
+                    </view>
+                    <view class="bottom">
+                        <view>{{item.coupon_info}}</view>
+                        <view>{{item.tk_total_sales}}人付款</view>
+                        <view>{{item.provcity}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</template>
+<template name="renderShops">
+    <block>
+        <view class="shops">
+            <view class="shops_list" wx:key="$loopState__temp2" wx:for="{{loopArray31}}" wx:for-item="item" wx:for-index="_anonIdx4">
+                <view class="left">
+                    <image src="{{item.$original.pict_url}}" class="imgSrc"></image>
+                </view>
+                <view class="right">
+                    <view class="title">{{item.$original.shop_title}}</view>
+                    <view class="type">{{item.$original.shop_type}}店</view>
+                    <view class="wang">{{item.$original.seller_nick}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</template>
 <template name="renderBody">
     <block>
         <view class="search-body">
             <block>
                 <block wx:if="{{current === 1}}">
-                    <view class="body1">宝贝信息</view>
+                    <view class="body1">
+                        <template is="renderProduct" data="{{...anonymousState__temp3}}"></template>
+                    </view>
                 </block>
                 <block wx:else>
-                    <view class="body2">店铺信息</view>
+                    <view class="body2">
+                        <template is="renderShops" data="{{...anonymousState__temp4}}"></template>
+                    </view>
                 </block>
             </block>
         </view>
@@ -36,8 +79,8 @@
 </template>
 <block wx:if="{{$taroCompReady}}">
     <view class="search">
-        <template is="renderSearch" data="{{...anonymousState__temp}}"></template>
-        <template is="renderTabs" data="{{...anonymousState__temp2}}"></template>
-        <template is="renderBody" data="{{...anonymousState__temp3}}"></template>
+        <template is="renderSearch" data="{{...anonymousState__temp5}}"></template>
+        <template is="renderTabs" data="{{...anonymousState__temp6}}"></template>
+        <template is="renderBody" data="{{...anonymousState__temp7}}"></template>
     </view>
 </block>
