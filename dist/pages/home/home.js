@@ -47,7 +47,7 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__6", "anonymousState__temp", "anonymousState__temp2", "goodsList", "page"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__0", "anonymousState__temp", "anonymousState__temp2", "goodsList", "page"], _this.config = {
       navigationBarTitleText: '首页',
       enablePullDownRefresh: false
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -260,19 +260,19 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__6 = (0, _index.genCompid)(__prefix + "$compid__6");
+      var $compid__0 = (0, _index.genCompid)(__prefix + "$compid__0");
 
-      var anonymousState__temp = this._createSearchData(__prefix + "GIcIDuwdeu")();
+      var anonymousState__temp = this._createSearchData(__prefix + "KWXtXmRGgw")();
 
-      var anonymousState__temp2 = this._createNavData(__prefix + "DeveppuXlY")();
+      var anonymousState__temp2 = this._createNavData(__prefix + "VObyrrZpcl")();
 
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__6);
+      }, $compid__0);
       Object.assign(this.__state, {
-        $compid__6: $compid__6,
+        $compid__0: $compid__0,
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2
       });
