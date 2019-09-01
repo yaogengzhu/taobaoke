@@ -98,42 +98,42 @@ export default class Home extends Component<IProps, IState> {
     switch (type) {
       case 'man':
         Taro.navigateTo({
-          url: '/pages/man/man'
+          url: '/pages/main/main?type=man'
         })
         break
       case 'neiyi':
         Taro.navigateTo({
-          url: '/pages/neiyi/neiyi'
+          url: '/pages/main/main?type=neiyi'
         })
         break
       case 'sport':
         Taro.navigateTo({
-          url: '/pages/sport/sport'
+          url: '/pages/main/main?type=sport'
         })
         break
       case 'meiz':
         Taro.navigateTo({
-          url: '/pages/meiz/meiz'
+          url: '/pages/main/main?type=meiz'
         })
         break
       case 'shuma':
         Taro.navigateTo({
-          url: '/pages/shuma/shuma'
+          url: '/pages/main/main?type=shuma'
         })
         break
       case 'women':
         Taro.navigateTo({
-          url: '/pages/women/women'
+          url: '/pages/main/main?type=women'
         })
         break
-      case 'women':
+      case 'food':
         Taro.navigateTo({
-          url: '/pages/food/food'
+          url: '/pages/main/main?type=food'
         })
         break
       case 'bag':
         Taro.navigateTo({
-          url: '/pages/bag/bag'
+          url: '/pages/main/main?type=bag'
         })
         break
     }

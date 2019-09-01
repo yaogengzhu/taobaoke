@@ -24,20 +24,13 @@ class App extends Component {
     pages: [
       'pages/home/home',
       'pages/person/person',
-      'pages/man/man',
-      'pages/bag/bag',
-      'pages/food/food',
-      'pages/meiz/meiz',
-      'pages/neiyi/neiyi',
-      'pages/shuma/shuma',
-      'pages/sport/sport',
-      'pages/women/women',
+      'pages/main/main',
       'pages/search/search'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#1296db',
-      navigationBarTitleText: '小芒果日记',
+      navigationBarTitleText: '',
       navigationBarTextStyle: 'white'
     },
     "tabBar": {

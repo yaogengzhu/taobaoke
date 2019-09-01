@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require("../../npm/@tarojs/taro-weapp/index.js");
+var _index = require('../../npm/@tarojs/taro-weapp/index.js');
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -40,21 +40,63 @@ var Man = (_temp2 = _class = function (_BaseComponent) {
   }
 
   _createClass(Man, [{
-    key: "_constructor",
+    key: '_constructor',
     value: function _constructor() {
-      _get(Man.prototype.__proto__ || Object.getPrototypeOf(Man.prototype), "_constructor", this).apply(this, arguments);
+      _get(Man.prototype.__proto__ || Object.getPrototypeOf(Man.prototype), '_constructor', this).apply(this, arguments);
       this.state = {};
       this.$$refs = [];
     }
     // 生命周期函数 
 
   }, {
-    key: "componentDidMount",
+    key: 'componentDidMount',
     value: function componentDidMount() {
-      console.log(this.$router.params);
+      var type = this.$router.params.type;
+      switch (type) {
+        case 'man':
+          _index2.default.setNavigationBarTitle({
+            title: '男装'
+          });
+          break;
+        case 'neiyi':
+          _index2.default.setNavigationBarTitle({
+            title: '内衣'
+          });
+          break;
+        case 'sport':
+          _index2.default.setNavigationBarTitle({
+            title: '运动用品'
+          });
+          break;
+        case 'meiz':
+          _index2.default.setNavigationBarTitle({
+            title: '美妆'
+          });
+          break;
+        case 'shuma':
+          _index2.default.setNavigationBarTitle({
+            title: '数码'
+          });
+          break;
+        case 'women':
+          _index2.default.setNavigationBarTitle({
+            title: '女装'
+          });
+          break;
+        case 'food':
+          _index2.default.setNavigationBarTitle({
+            title: '食品'
+          });
+          break;
+        case 'bag':
+          _index2.default.setNavigationBarTitle({
+            title: '鞋包服饰'
+          });
+          break;
+      }
     }
   }, {
-    key: "_createData",
+    key: '_createData',
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
@@ -67,7 +109,7 @@ var Man = (_temp2 = _class = function (_BaseComponent) {
   }]);
 
   return Man;
-}(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/man/man", _temp2);
+}(_index.Component), _class.$$events = [], _class.$$componentPath = "pages/main/main", _temp2);
 exports.default = Man;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Man, true));

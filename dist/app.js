@@ -42,11 +42,11 @@ var _App = function (_BaseComponent) {
     var _this = _possibleConstructorReturn(this, (_App.__proto__ || Object.getPrototypeOf(_App)).apply(this, arguments));
 
     _this.config = {
-      pages: ['pages/home/home', 'pages/person/person', 'pages/man/man', 'pages/bag/bag', 'pages/food/food', 'pages/meiz/meiz', 'pages/neiyi/neiyi', 'pages/shuma/shuma', 'pages/sport/sport', 'pages/women/women', 'pages/search/search'],
+      pages: ['pages/home/home', 'pages/person/person', 'pages/main/main', 'pages/search/search'],
       window: {
         backgroundTextStyle: 'light',
         navigationBarBackgroundColor: '#1296db',
-        navigationBarTitleText: '小芒果日记',
+        navigationBarTitleText: '',
         navigationBarTextStyle: 'white'
       },
       "tabBar": {

@@ -47,7 +47,7 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__0", "anonymousState__temp", "anonymousState__temp2", "goodsList", "page"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__14", "anonymousState__temp", "anonymousState__temp2", "goodsList", "page"], _this.config = {
       navigationBarTitleText: '首页',
       enablePullDownRefresh: false
     }, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -139,42 +139,42 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       switch (type) {
         case 'man':
           _index2.default.navigateTo({
-            url: '/pages/man/man'
+            url: '/pages/main/main?type=man'
           });
           break;
         case 'neiyi':
           _index2.default.navigateTo({
-            url: '/pages/neiyi/neiyi'
+            url: '/pages/main/main?type=neiyi'
           });
           break;
         case 'sport':
           _index2.default.navigateTo({
-            url: '/pages/sport/sport'
+            url: '/pages/main/main?type=sport'
           });
           break;
         case 'meiz':
           _index2.default.navigateTo({
-            url: '/pages/meiz/meiz'
+            url: '/pages/main/main?type=meiz'
           });
           break;
         case 'shuma':
           _index2.default.navigateTo({
-            url: '/pages/shuma/shuma'
+            url: '/pages/main/main?type=shuma'
           });
           break;
         case 'women':
           _index2.default.navigateTo({
-            url: '/pages/women/women'
+            url: '/pages/main/main?type=women'
           });
           break;
-        case 'women':
+        case 'food':
           _index2.default.navigateTo({
-            url: '/pages/food/food'
+            url: '/pages/main/main?type=food'
           });
           break;
         case 'bag':
           _index2.default.navigateTo({
-            url: '/pages/bag/bag'
+            url: '/pages/main/main?type=bag'
           });
           break;
       }
@@ -260,19 +260,19 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__0 = (0, _index.genCompid)(__prefix + "$compid__0");
+      var $compid__14 = (0, _index.genCompid)(__prefix + "$compid__14");
 
-      var anonymousState__temp = this._createSearchData(__prefix + "JrTSEmEVGN")();
+      var anonymousState__temp = this._createSearchData(__prefix + "IMIERNBZJJ")();
 
-      var anonymousState__temp2 = this._createNavData(__prefix + "fGgVdopYhN")();
+      var anonymousState__temp2 = this._createNavData(__prefix + "sJjjpZnTCB")();
 
       _index.propsManager.set({
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__0);
+      }, $compid__14);
       Object.assign(this.__state, {
-        $compid__0: $compid__0,
+        $compid__14: $compid__14,
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2
       });
