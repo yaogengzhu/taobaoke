@@ -50,25 +50,25 @@
             </swiper>
         </view>
         <view>
-            <at-noticebar compid="{{$compid__14}}"><text class="tip">特别通知：小程序正在开发中</text>
+            <at-noticebar compid="{{$compid__19}}"><text class="tip">特别通知：小程序正在开发中</text>
             </at-noticebar>
         </view>
         <template is="renderNav" data="{{...anonymousState__temp2}}"></template>
         <view class="hot">热<text class="line">/</text>搜<text class="line">/</text>榜<text class="line">/</text>推<text class="line">/</text>荐</view>
-        <view class="goodsBox" wx:key="num_iid" wx:for="{{goodsList}}" wx:for-item="item" wx:for-index="_anonIdx2">
+        <view class="goodsBox" wx:key="$original.num_iid" bindtap="anonymousFunc9" wx:for="{{loopArray29}}" wx:for-item="item" wx:for-index="__index9" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
             <view class="left">
-                <image src="{{item.pict_url}}" class="imgSrc"></image>
+                <image src="{{item.$original.pict_url}}" class="imgSrc"></image>
             </view>
             <view class="right">
-                <view class="title">{{item.title}}</view>
+                <view class="title">{{item.$original.title}}</view>
                 <view class="price">
-                    <view class="oldPrice">¥{{item.reserve_price}}</view>
-                    <view class="newPrice">¥{{item.zk_final_price}}</view>
+                    <view class="oldPrice">¥{{item.$original.reserve_price}}</view>
+                    <view class="newPrice">¥{{item.$original.zk_final_price}}</view>
                 </view>
                 <view class="bottom">
-                    <view>{{item.nick}}</view>
-                    <view>{{item.volume}}人付款</view>
-                    <view>{{item.provcity}}</view>
+                    <view>{{item.$original.nick}}</view>
+                    <view>{{item.$original.volume}}人付款</view>
+                    <view>{{item.$original.provcity}}</view>
                 </view>
             </view>
         </view>

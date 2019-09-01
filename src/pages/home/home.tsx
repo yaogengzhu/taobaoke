@@ -145,6 +145,13 @@ export default class Home extends Component<IProps, IState> {
     })
   }
 
+  jumpToProductDetail(item) {
+    const goodsInfo = JSON.stringify(item)
+    Taro.navigateTo({
+      url: '/pages/productDetail/productDetail?goodsInfo=' + goodsInfo
+    })
+  }
+
   // render函数 
   // 搜索
   renderSearch() {
@@ -244,7 +251,7 @@ export default class Home extends Component<IProps, IState> {
         {/* top200 渲染 */}
         {this.state.goodsList.map((item) => {
           return (
-            <View className='goodsBox' key={item.num_iid}>
+            <View className='goodsBox' key={item.num_iid} onClick={() => this.jumpToProductDetail(item)}>
               <View className='left'>
                 <Image src={item.pict_url} className='imgSrc'></Image>
               </View>
