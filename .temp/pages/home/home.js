@@ -1,10 +1,20 @@
 import Nerv from "nervjs";
-import { Component } from "@tarojs/taro-h5";
+import Taro, { Component } from "@tarojs/taro-h5";
 import { View, Text, Swiper, SwiperItem, Image } from '@tarojs/components';
 import { AtNoticebar } from 'taro-ui';
 const fetch = require('../../api/index');
+// 引入图片
+import bag from '../../assets/images/bag.png';
+import food from '../../assets/images/food.png';
+import man from '../../assets/images/man.png';
+import women from '../../assets/images/women.png';
+import meiz from '../../assets/images/meiz.png';
+import shuama from '../../assets/images/shuma.png';
+import sport from '../../assets/images/sport.png';
+import neiyi from '../../assets/images/neiyi.png';
 import './home.scss';
-export default class Index extends Component {
+export default class Home extends Component {
+  // 定义一些不需要渲染的数据
   constructor() {
     super(...arguments);
     /**
@@ -14,16 +24,166 @@ export default class Index extends Component {
      * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
      * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
      */
+
+    this.state = {
+      goodsList: [],
+      page: 1
+    };
   }
   componentWillMount() {
-    console.log(fetch);
+    // 调用函数
+    this.getHotGoods();
   }
   componentDidMount() {}
   componentWillUnmount() {}
-  componentDidShow() {}
-  componentDidHide() {}
+  componentDidShow() {
+    Taro.getSetting({
+      success(res) {
+        console.log(res);
+      }
+    });
+    this._offReachBottom = Taro.onReachBottom({
+      callback: this.onReachBottom,
+      ctx: this,
+      onReachBottomDistance: undefined
+    });
+  }
+  componentDidHide() {
+    this._offReachBottom && this._offReachBottom();
+  }
+  // 下拉触底事件
+  onReachBottom() {
+    this.setState({
+      page: this.state.page + 1
+    }, () => {
+      this.getHotGoods();
+    });
+  }
+  // method
+  getHotGoods() {
+    fetch.jsonRPC({
+      url: '/2/get_hot',
+      data: {
+        'platform': 2,
+        'page_size': 20,
+        'page_no': this.state.page
+      }
+    }).then(res => {
+      if (this.state.page === 1) {
+        this.setState({
+          goodsList: res.data.uatm_tbk_item
+        });
+      } else {
+        this.setState({
+          goodsList: this.state.goodsList.concat(res.data.uatm_tbk_item)
+        });
+      }
+    });
+  }
+  // 跳转函数 
+  jumpTopage(type) {
+    switch (type) {
+      case 'man':
+        Taro.navigateTo({
+          url: '/pages/main/main?type=man'
+        });
+        break;
+      case 'neiyi':
+        Taro.navigateTo({
+          url: '/pages/main/main?type=neiyi'
+        });
+        break;
+      case 'sport':
+        Taro.navigateTo({
+          url: '/pages/main/main?type=sport'
+        });
+        break;
+      case 'meiz':
+        Taro.navigateTo({
+          url: '/pages/main/main?type=meiz'
+        });
+        break;
+      case 'shuma':
+        Taro.navigateTo({
+          url: '/pages/main/main?type=shuma'
+        });
+        break;
+      case 'women':
+        Taro.navigateTo({
+          url: '/pages/main/main?type=women'
+        });
+        break;
+      case 'food':
+        Taro.navigateTo({
+          url: '/pages/main/main?type=food'
+        });
+        break;
+      case 'bag':
+        Taro.navigateTo({
+          url: '/pages/main/main?type=bag'
+        });
+        break;
+    }
+  }
+  jumpToSearch() {
+    Taro.navigateTo({
+      url: '/pages/search/search'
+    });
+  }
+  jumpToProductDetail(item) {
+    const goodsInfo = JSON.stringify(item);
+    Taro.navigateTo({
+      url: '/pages/productDetail/productDetail?goodsInfo=' + goodsInfo
+    });
+  }
+  // render函数 
+  // 搜索
+  renderSearch() {
+    return <View className="search" onClick={() => this.jumpToSearch()}>
+        <View className="search-box">
+          请输入搜索内容
+        </View>
+      </View>;
+  }
+  renderNav() {
+    return <View className="block1">
+        <View className="list" hover-class="hover-bg" onClick={() => this.jumpTopage('man')}>
+          <Image src={man} className="srcImg"></Image>
+          男装
+      </View>
+        <View className="list" hover-class="hover-bg" onClick={() => this.jumpTopage('neiyi')}>
+          <Image src={neiyi} className="srcImg"></Image>
+          内衣
+      </View>
+        <View className="list" hover-class="hover-bg" onClick={() => this.jumpTopage('sport')}>
+          <Image src={sport} className="srcImg"></Image>
+          运动用品
+      </View>
+        <View className="list" hover-class="hover-bg" onClick={() => this.jumpTopage('meiz')}>
+          <Image src={meiz} className="srcImg"></Image>
+          美妆
+      </View>
+        <View className="list" hover-class="hover-bg" onClick={() => this.jumpTopage('shuma')}>
+          <Image src={shuama} className="srcImg"></Image>
+          数码家电
+      </View>
+        <View className="list" hover-class="hover-bg" onClick={() => this.jumpTopage('women')}>
+          <Image src={women} className="srcImg"></Image>
+          女装
+      </View>
+        <View className="list" hover-class="hover-bg" onClick={() => this.jumpTopage('food')}>
+          <Image src={food} className="srcImg"></Image>
+          食品
+      </View>
+        <View className="list" hover-class="hover-bg" onClick={() => this.jumpTopage('bag')}>
+          <Image src={bag} className="srcImg"></Image>
+          鞋包配饰
+      </View>
+      </View>;
+  }
   render() {
     return <View>
+        {this.renderSearch()}
         <View className="lunbotu">
           <Swiper className="test-h" indicatorColor="#333" indicatorActiveColor="#1296db" circular indicatorDots autoplay>
             <SwiperItem>
@@ -48,9 +208,35 @@ export default class Index extends Component {
             <Text className="tip">特别通知：小程序正在开发中</Text>
           </AtNoticebar>
         </View>
+        
+        {this.renderNav()}
+
+        
+        <View className="hot">热<Text className="line">/</Text>搜<Text className="line">/</Text>榜<Text className="line">/</Text>推<Text className="line">/</Text>荐</View>
+        
+        {this.state.goodsList.map(item => {
+        return <View className="goodsBox" key={item.num_iid} onClick={() => this.jumpToProductDetail(item)}>
+              <View className="left">
+                <Image src={item.pict_url} className="imgSrc"></Image>
+              </View>
+              <View className="right">
+                <View className="title">{item.title}</View>
+                <View className="price">
+                  <View className="oldPrice">¥{item.reserve_price}</View>
+                  <View className="newPrice">¥{item.zk_final_price}</View>
+                </View>
+                <View className="bottom">
+                  <View>{item.nick}</View>
+                  <View>{item.volume}人付款</View>
+                  <View>{item.provcity}</View>
+                </View>
+              </View>
+            </View>;
+      })}
       </View>;
   }
   config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '首页',
+    enablePullDownRefresh: false
   };
 }

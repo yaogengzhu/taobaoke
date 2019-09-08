@@ -81,6 +81,18 @@ class App extends Component {
           path: '/pages/person/person',
           componentLoader: () => import( /* webpackChunkName: "person_person" */'./pages/person/person'),
           isIndex: false
+        }, {
+          path: '/pages/main/main',
+          componentLoader: () => import( /* webpackChunkName: "main_main" */'./pages/main/main'),
+          isIndex: false
+        }, {
+          path: '/pages/search/search',
+          componentLoader: () => import( /* webpackChunkName: "search_search" */'./pages/search/search'),
+          isIndex: false
+        }, {
+          path: '/pages/productDetail/productDetail',
+          componentLoader: () => import( /* webpackChunkName: "productDetail_productDetail" */'./pages/productDetail/productDetail'),
+          isIndex: false
         }]} customRoutes={{}} />
               
                     </TabbarPanel>
@@ -90,12 +102,12 @@ class App extends Component {
                   </TabbarContainer>;
   }
   config = {
-    pages: ["/pages/home/home", "/pages/person/person"],
+    pages: ["/pages/home/home", "/pages/person/person", "/pages/main/main", "/pages/search/search", "/pages/productDetail/productDetail"],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarBackgroundColor: '#1296db',
+      navigationBarTitleText: '',
+      navigationBarTextStyle: 'white'
     },
     "tabBar": { "list": [{ "pagePath": "/pages/home/home", "text": "首页", 'iconPath': require("././assets/images/home.png"), 'selectedIconPath': require("././assets/images/home1.png") }, { "pagePath": "/pages/person/person", "text": "会员中心", 'iconPath': require("././assets/images/Person.png"), 'selectedIconPath': require("././assets/images/Person1.png") }], 'selectedColor': '#1296db', mode: "hash",
       basename: "/",

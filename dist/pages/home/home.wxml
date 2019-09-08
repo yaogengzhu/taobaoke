@@ -50,12 +50,12 @@
             </swiper>
         </view>
         <view>
-            <at-noticebar compid="{{$compid__19}}"><text class="tip">特别通知：小程序正在开发中</text>
+            <at-noticebar compid="{{$compid__0}}"><text class="tip">特别通知：小程序正在开发中</text>
             </at-noticebar>
         </view>
         <template is="renderNav" data="{{...anonymousState__temp2}}"></template>
         <view class="hot">热<text class="line">/</text>搜<text class="line">/</text>榜<text class="line">/</text>推<text class="line">/</text>荐</view>
-        <view class="goodsBox" wx:key="$original.num_iid" bindtap="anonymousFunc9" wx:for="{{loopArray29}}" wx:for-item="item" wx:for-index="__index9" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+        <view class="goodsBox" wx:key="$original.num_iid" bindtap="anonymousFunc9" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="__index9" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
             <view class="left">
                 <image src="{{item.$original.pict_url}}" class="imgSrc"></image>
             </view>

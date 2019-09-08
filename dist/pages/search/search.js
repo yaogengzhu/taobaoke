@@ -229,7 +229,7 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       return function () {
         var shopInfo = _this8.state.shopInfo;
 
-        var loopArray25 = shopInfo.map(function (item, _anonIdx3) {
+        var loopArray2 = shopInfo.map(function (item, _anonIdx3) {
           item = {
             $original: (0, _index.internal_get_original)(item)
           };
@@ -240,7 +240,7 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
           };
         });
         return {
-          loopArray25: loopArray25,
+          loopArray2: loopArray2,
           shopInfo: shopInfo
         };
       };
@@ -253,9 +253,9 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       return function () {
         var current = _this9.state.current;
 
-        var anonymousState__temp3 = current === 1 ? _this9._createProductData(_$uid + "mHmftKjrDZ")() : null;
+        var anonymousState__temp3 = current === 1 ? _this9._createProductData(_$uid + "dCavGoISdy")() : null;
 
-        var anonymousState__temp4 = _this9._createShopsData(_$uid + "RYJVAgsSjA")();
+        var anonymousState__temp4 = _this9._createShopsData(_$uid + "tuufiIZcbQ")();
 
         return {
           current: current,
@@ -273,11 +273,11 @@ var Search = (_temp2 = _class = function (_BaseComponent) {
       var __prefix = this.$prefix;
       ;
 
-      var anonymousState__temp5 = this._createSearchData(__prefix + "HwCrYYRunH")();
+      var anonymousState__temp5 = this._createSearchData(__prefix + "jvOjJaUYfd")();
 
-      var anonymousState__temp6 = this._createTabsData(__prefix + "RYTFZBrNNu")();
+      var anonymousState__temp6 = this._createTabsData(__prefix + "hkmmqOhckK")();
 
-      var anonymousState__temp7 = this._createBodyData(__prefix + "kdWVdDBAjI")();
+      var anonymousState__temp7 = this._createBodyData(__prefix + "TcTVkbLUyP")();
 
       Object.assign(this.__state, {
         anonymousState__temp5: anonymousState__temp5,

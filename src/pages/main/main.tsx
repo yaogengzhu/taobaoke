@@ -14,8 +14,6 @@ export default class Man extends Component<IProps, IState> {
     // 生命周期函数 
     componentDidMount() {
         let type = this.$router.params.type
-        
-
         switch (type) {
             case 'man':
                 Taro.setNavigationBarTitle({
@@ -61,6 +59,7 @@ export default class Man extends Component<IProps, IState> {
 
         }
     }
+
 
     render() {
         return (

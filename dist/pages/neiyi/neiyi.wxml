@@ -1,3 +1,0 @@
-<block wx:if="{{$taroCompReady}}">
-    <view>内衣</view>
-</block>

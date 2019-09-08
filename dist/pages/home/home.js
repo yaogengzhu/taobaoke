@@ -47,7 +47,7 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray29", "$compid__19", "anonymousState__temp", "anonymousState__temp2", "goodsList", "page"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["loopArray0", "$compid__0", "anonymousState__temp", "anonymousState__temp2", "goodsList", "page"], _this.config = {
       navigationBarTitleText: '首页',
       enablePullDownRefresh: false
     }, _this.anonymousFunc9Map = {}, _this.customComponents = ["AtNoticebar"], _temp), _possibleConstructorReturn(_this, _ret);
@@ -88,7 +88,13 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
     value: function componentWillUnmount() {}
   }, {
     key: "componentDidShow",
-    value: function componentDidShow() {}
+    value: function componentDidShow() {
+      _index2.default.getSetting({
+        success: function success(res) {
+          console.log(res);
+        }
+      });
+    }
   }, {
     key: "componentDidHide",
     value: function componentDidHide() {}
@@ -270,18 +276,18 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__19 = (0, _index.genCompid)(__prefix + "$compid__19");
+      var $compid__0 = (0, _index.genCompid)(__prefix + "$compid__0");
 
-      var anonymousState__temp = this._createSearchData(__prefix + "rBQRDlWEgH")();
+      var anonymousState__temp = this._createSearchData(__prefix + "idvwNexEdf")();
 
-      var anonymousState__temp2 = this._createNavData(__prefix + "gXqbkSRPjM")();
+      var anonymousState__temp2 = this._createNavData(__prefix + "TjfUJnlmEt")();
 
-      var loopArray29 = this.__state.goodsList.map(function (item, __index9) {
+      var loopArray0 = this.__state.goodsList.map(function (item, __index9) {
         item = {
           $original: (0, _index.internal_get_original)(item)
         };
 
-        var _$indexKey = "IWnhO" + __index9;
+        var _$indexKey = "SNFyN" + __index9;
 
         _this6.anonymousFunc9Map[_$indexKey] = function () {
           return _this6.jumpToProductDetail(item.$original);
@@ -297,10 +303,10 @@ var Home = (_temp2 = _class = function (_BaseComponent) {
         "marquee": true,
         "single": true,
         "speed": 100
-      }, $compid__19);
+      }, $compid__0);
       Object.assign(this.__state, {
-        loopArray29: loopArray29,
-        $compid__19: $compid__19,
+        loopArray0: loopArray0,
+        $compid__0: $compid__0,
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp2: anonymousState__temp2
       });

@@ -1,0 +1,164 @@
+page {
+  box-sizing: border-box;
+}
+.search {
+  .search-box {
+    display: flex;
+    flex-direction: columnl;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #1296db;
+    color: #fff;
+    position: sticky;
+    top: 0;
+
+    .input_box {
+      position: relative;
+      width: 90%;
+      height: 60px;
+      border-radius: 60px;
+      border: 1px solid #fff;
+
+      .input {
+        width: 80%;
+        height: 60px;
+        font-size: 26px;
+        color: #fff;
+        padding: 0 20px;
+      }
+
+      .input_icon {
+        position: absolute;
+        top: 14px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+      }
+    }
+  }
+
+  .search-tabs {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    background-color: #1296db;
+
+    .tabs1,
+    .tabs2 {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      font-size: 24px;
+      color: #fff;
+      line-height: 60px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .product {
+      width: 200px;
+      box-sizing: border-box;
+    }
+
+    .shop {
+      width: 200px;
+      box-sizing: border-box;
+    }
+
+    .active {
+      border-bottom: 4px solid #f40;
+    }
+  }
+  .search-body {
+    // height: 2000px;
+  }
+  .goods {
+    margin-top: 15px;
+  }
+
+  .goodsBox {
+    display: flex;
+    margin-bottom: 40px;
+    // height: 260px;
+    padding: 0 20px;
+    .left {
+      width: 200px;
+      // height: 100%;
+      height: 200px;
+      // background-color: red;
+
+      .imgSrc {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-left: 20px;
+      justify-content: space-between;
+      .title {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        font-size: 28px;
+        color: #4b566a;
+        // height: 80px;
+      }
+      .price {
+        display: flex;
+        // flex: 1;
+        font-size: 26px;
+        .oldPrice {
+          color: #999;
+          // outline: #4b566a;
+          text-decoration: line-through;
+        }
+        .newPrice {
+          color: #f40;
+          margin-left: 30px;
+        }
+      }
+      .bottom {
+        // height: 40px;
+        color: #333;
+        display: flex;
+        font-size: 24px;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .shops{
+    .shops_list{
+      // -webkit-border-before-width: 1
+      display: flex;
+      width: 100%;
+      height: 150px;
+
+      .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        // background-color: red;
+
+        .imgSrc {
+          width: 120px;
+          height: 120px;
+        }
+        
+      }
+      .right {
+        flex: 1;
+        // background-color: pink;
+      }
+    }
+  }
+}

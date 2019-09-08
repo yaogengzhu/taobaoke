@@ -46,7 +46,7 @@
 <template name="renderShops">
     <block>
         <view class="shops">
-            <view class="shops_list" wx:key="$loopState__temp2" wx:for="{{loopArray25}}" wx:for-item="item" wx:for-index="_anonIdx4">
+            <view class="shops_list" wx:key="$loopState__temp2" wx:for="{{loopArray2}}" wx:for-item="item" wx:for-index="_anonIdx4">
                 <view class="left">
                     <image src="{{item.$original.pict_url}}" class="imgSrc"></image>
                 </view>

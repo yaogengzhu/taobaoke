@@ -1,3 +1,0 @@
-<block wx:if="{{$taroCompReady}}">
-    <view>食品</view>
-</block>

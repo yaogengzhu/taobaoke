@@ -58,7 +58,13 @@ export default class Home extends Component<IProps, IState> {
 
   componentWillUnmount() { }
 
-  componentDidShow() { }
+  componentDidShow() { 
+    Taro.getSetting({
+      success(res) {
+        console.log(res)
+      }
+    })
+  }
 
   componentDidHide() { }
 
